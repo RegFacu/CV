@@ -34,7 +34,15 @@
       "name": "Resumen profesional"
     },
     {
-      "description": "Líder técnico con más de 8 años de experiencia en el desarrollo de aplicaciones android. Me considero un líder natural en quien mis compañeros se apoyan para resolver los problemas y acompañarlos en las soluciones a aplicar.\nHe trabajado para grandes clientes con resultados muy positivos y muy buenas referencias. Siempre me encuentro aprendiendo sobre las nuevas tecnologías y librerías que van surgiendo, buscando utilizar las mejores prácticas. Cuento con una gran capacidad de adaptación a las necesidades del proyecto.",
+      "description": [
+        {
+          "text": "Líder técnico con más de 8 años de experiencia en el desarrollo de aplicaciones android. Me considero un líder natural en quien mis compañeros se apoyan para resolver los problemas y acompañarlos en las soluciones a aplicar."
+        },
+        {
+          "text": "He trabajado para grandes clientes con resultados muy positivos y muy buenas referencias. Siempre me encuentro aprendiendo sobre las nuevas tecnologías y librerías que van surgiendo, buscando utilizar las mejores prácticas. Cuento con una gran capacidad de adaptación a las necesidades del proyecto.",
+          "bullet": true
+        }
+      ],
       "competences": [
         {
           "name": "Planificación",
@@ -74,7 +82,11 @@
       "company": "Greenlight",
       "from": "Marzo de 2022",
       "to": "Actual",
-      "description": "Definición de varios procesos principalmente relacionados con el desarrollo, testing y release. Desarrollo de la infraestructura para la modularización de la aplicación así como la automatización relacionada a las validaciones de codigo hata la entrega en el PlayStore. Definición de metricas técnicas así como de calidad de la infraestructura como de la aplicación. Observabilidad, incluyendo dashboard y monitores para la visualización y notificación de anomalías en el uso normal de las herramientas.",
+      "description": [
+        {
+          "text": "Definición de varios procesos principalmente relacionados con el desarrollo, testing y release. Desarrollo de la infraestructura para la modularización de la aplicación así como la automatización relacionada a las validaciones de codigo hata la entrega en el PlayStore. Definición de metricas técnicas así como de calidad de la infraestructura como de la aplicación. Observabilidad, incluyendo dashboard y monitores para la visualización y notificación de anomalías en el uso normal de las herramientas."
+        }
+      ],
       "competences": [
         {
           "name": "Google Play Distribution",
@@ -119,7 +131,11 @@
       "company": "Venmo/PayPal",
       "from": "Enero de 2021",
       "to": "Marzo de 2022",
-      "description": "Desarrollo de infra para soporte en el delivery de la aplicación al playstore incluyendo la automatización de los pasos del proceso de desarrollo incluyendo metricas y validaciones para asegurar la calidad.",
+      "description": [
+        {
+          "text": "Desarrollo de infra para soporte en el delivery de la aplicación al playstore incluyendo la automatización de los pasos del proceso de desarrollo incluyendo metricas y validaciones para asegurar la calidad."
+        }
+      ],
       "competences": [
         {
           "name": "Python",
@@ -148,7 +164,17 @@
       "company": "Globallogic",
       "from": "Agosto de 2020",
       "to": "Enero de 2021",
-      "description": "Me desempeñé como manager técnico del equipo, no sólo en definiciones relacionadas a Android sino también al proyecto en general.\nRealicé una nueva aplicación basada en una preexistente, aportando ideas para estabilizar el BackEnd y mejorar las funcionalidades, incluyendo un nuevo proceso que reemplazó el core de venta de saldo.\nGestioné un equipo de 10 personas (QA, BackEnd, Android, UX).\n",
+      "description": [
+        {
+          "text": "Me desempeñé como manager técnico del equipo, no sólo en definiciones relacionadas a Android sino también al proyecto en general."
+        },
+        {
+          "text": "Realicé una nueva aplicación basada en una preexistente, aportando ideas para estabilizar el BackEnd y mejorar las funcionalidades, incluyendo un nuevo proceso que reemplazó el core de venta de saldo."
+        },
+        {
+          "text": "Gestioné un equipo de 10 personas (QA, BackEnd, Android, UX)."
+        }
+      ],
       "competences": [
         {
           "name": "Jenkins",
@@ -201,7 +227,11 @@
       "company": "Globallogic",
       "from": "Abril de 2017",
       "to": "Agosto de 2020",
-      "description": "Desarrollo de 3 aplicaciones Android con un core en común según los lineamientos de diseño solicitados. Dichas aplicaciones se comunican con un servidor que se encuentra dentro del avión el cual provee información a la aplicación y permite interactuar como control de las funcionalidades provistas para el confort de los pasajeros.\nLiderazgo de una de las 3 aplicaciones, trabajando en conjunto con otros líderes para coordinar el trabajo de cada célula desarrollando componentes compartidos.",
+      "description": [
+        {
+          "text": "Desarrollo de 3 aplicaciones Android con un core en común según los lineamientos de diseño solicitados. Dichas aplicaciones se comunican con un servidor que se encuentra dentro del avión el cual provee información a la aplicación y permite interactuar como control de las funcionalidades provistas para el confort de los pasajeros.\nLiderazgo de una de las 3 aplicaciones, trabajando en conjunto con otros líderes para coordinar el trabajo de cada célula desarrollando componentes compartidos."
+        }
+      ],
       "competences": [
         {
           "name": "Dagger",
@@ -230,7 +260,11 @@
       "company": "Globallogic",
       "from": "Abril de 2016",
       "to": "Abril de 2017",
-      "description": "Desarrollo de una aplicación Android utilizada para el equipo de ventas de 9 países diferentes, la cual provee información y soporte a los vendedores para realizar las ventas.\nDiseño e implementación de la aplicación android.\n",
+      "description": [
+        {
+          "text": "Desarrollo de una aplicación Android utilizada para el equipo de ventas de 9 países diferentes, la cual provee información y soporte a los vendedores para realizar las ventas.\nDiseño e implementación de la aplicación android.\n"
+        }
+      ],
       "competences": [
         {
           "name": "SQLite",
@@ -259,7 +293,11 @@
       "company": "Globallogic",
       "from": "Diciembre de 2014",
       "to": "Abril de 2016",
-      "description": "Desarrollo de pruebas de concepto en android para el área de marketing utilizando el efecto chroma key, quitando el fondo verde de los videos en tiempo real e incluyendo animaciones en realidad aumentada.",
+      "description": [
+        {
+          "text": "Desarrollo de pruebas de concepto en android para el área de marketing utilizando el efecto chroma key, quitando el fondo verde de los videos en tiempo real e incluyendo animaciones en realidad aumentada."
+        }
+      ],
       "competences": [
         {
           "name": "BLE",
@@ -288,7 +326,11 @@
       "company": "Arzion S.R.L.",
       "from": "Octubre de 2013",
       "to": "Noviembre de 2013",
-      "description": "Desarrollo de una aplicación para vender productos entre amigos y conocidos. Colaboración en la definición del diseño y de la arquitectura de la solución.",
+      "description": [
+        {
+          "text": "Desarrollo de una aplicación para vender productos entre amigos y conocidos. Colaboración en la definición del diseño y de la arquitectura de la solución."
+        }
+      ],
       "competences": [
         {
           "name": "Bitmap/Canvas",
@@ -313,7 +355,11 @@
       "company": "Arzion S.R.L.",
       "from": "Noviembre de 2012",
       "to": "Septiembre de 2013",
-      "description": "Desarrollo de red social para compartir secretos con la gente que incluía un chat en tiempo real a través de WebSockets.",
+      "description": [
+        {
+          "text": "Desarrollo de red social para compartir secretos con la gente que incluía un chat en tiempo real a través de WebSockets."
+        }
+      ],
       "competences": [
         {
           "name": "Android SDK",

@@ -121,7 +121,16 @@ class CV
             move_down(gap)
             fill_color @json.theme.default_color
             font_size @json.theme.section.default_text_size
-            custom_text_box(section.description, {at: [gap, cursor], width: column_width - gap })
+            section.description.each do |description|
+                left = gap
+                if description.bullet
+                    bullet_size = 4
+                    fill_ellipse [left + bullet_size, cursor - bullet_size * 1.5], bullet_size
+                    left += bullet_size * 2 + gap / 2
+                end
+                custom_text_box(description.text, {at: [left, cursor], width: column_width - gap })
+                move_down(gap / 2)
+            end
         end
         end_cursor = cursor
         if section.competences
