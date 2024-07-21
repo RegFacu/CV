@@ -1,0 +1,387 @@
+{
+  "theme": {
+    "background_color": "FFFFFF",
+    "default_color": "000000",
+    "primary_color": "536ef5",
+    "secondary_color": "5eb58f",
+    "header": {
+      "text_color": "000000",
+      "text_alignment": "left",
+      "height": 150,
+      "padding": 15,
+      "background_start_gradiant_color": "abcdef",
+      "background_end_gradiant_color": "c7deff"
+    },
+    "section": {
+      "gap": 10,
+      "small_text_size": 10,
+      "default_text_size": 12,
+      "title_text_size": 14,
+      "name_text_size": 18
+    }
+  },
+  "personal_info": {
+    "photo_path": "assets/photo.jpg",
+    "full_name": "Facundo Ariel Mengoni",
+    "title": "DevOps Android",
+    "phone": "+54 (221) 6161629",
+    "email": "mengonifacundo@gmail.com",
+    "country": "Argentina",
+    "time_zone": "-3"
+  },
+  "content": [
+    {
+      "name": "Resumen profesional"
+    },
+    {
+      "description": [
+        {
+          "text": "Líder técnico con más de 8 años de experiencia en el desarrollo de aplicaciones android. Me considero un líder natural en quien mis compañeros se apoyan para resolver los problemas y acompañarlos en las soluciones a aplicar."
+        },
+        {
+          "text": "He trabajado para grandes clientes con resultados muy positivos y muy buenas referencias. Siempre me encuentro aprendiendo sobre las nuevas tecnologías y librerías que van surgiendo, buscando utilizar las mejores prácticas. Cuento con una gran capacidad de adaptación a las necesidades del proyecto.",
+          "bullet": true
+        }
+      ],
+      "competences": [
+        {
+          "name": "Planificación",
+          "value": 9
+        },
+        {
+          "name": "Ingles",
+          "value": 7
+        },
+        {
+          "name": "Compañerismo",
+          "value": 10
+        },
+        {
+          "name": "Calidad",
+          "value": 8
+        },
+        {
+          "name": "Capacidad de análisis",
+          "value": 10
+        },
+        {
+          "name": "Resolución de problemas",
+          "value": 9.5
+        },
+        {
+          "name": "Reporting/Métricas",
+          "value": 8.5
+        }
+      ]
+    },
+    {
+      "name": "Experiencia profesional"
+    },
+    {
+      "title": "DevOps Android Engineer",
+      "company": "Greenlight",
+      "from": "Marzo de 2022",
+      "to": "Actual",
+      "description": [
+        {
+          "text": "Definición de varios procesos principalmente relacionados con el desarrollo, testing y release. Desarrollo de la infraestructura para la modularización de la aplicación así como la automatización relacionada a las validaciones de codigo hata la entrega en el PlayStore. Definición de metricas técnicas así como de calidad de la infraestructura como de la aplicación. Observabilidad, incluyendo dashboard y monitores para la visualización y notificación de anomalías en el uso normal de las herramientas."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Google Play Distribution",
+          "value": 9
+        },
+        {
+          "name": "Bitrise",
+          "value": 9
+        },
+        {
+          "name": "Datadog",
+          "value": 9
+        },
+        {
+          "name": "Ruby",
+          "value": 8
+        },
+        {
+          "name": "Artifactory",
+          "value": 9
+        },
+        {
+          "name": "Gradle",
+          "value": 8
+        },
+        {
+          "name": "GitHub Actions",
+          "value": 9.5
+        },
+        {
+          "name": "Docker",
+          "value": 8
+        },
+        {
+          "name": "Checks estáticos",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "title": "Android Engineer",
+      "company": "Venmo/PayPal",
+      "from": "Enero de 2021",
+      "to": "Marzo de 2022",
+      "description": [
+        {
+          "text": "Desarrollo de infra para soporte en el delivery de la aplicación al playstore incluyendo la automatización de los pasos del proceso de desarrollo incluyendo metricas y validaciones para asegurar la calidad."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Python",
+          "value": 8
+        },
+        {
+          "name": "Datadog",
+          "value": 7
+        },
+        {
+          "name": "AWS",
+          "value": 8
+        },
+        {
+          "name": "Artifactory",
+          "value": 8
+        },
+        {
+          "name": "GitHub Actions",
+          "value": 9.5
+        }
+      ]
+    },
+    {
+      "title": "Referente del área mobile",
+      "company": "Globallogic",
+      "from": "Agosto de 2020",
+      "to": "Enero de 2021",
+      "description": [
+        {
+          "text": "Me desempeñé como manager técnico del equipo, no sólo en definiciones relacionadas a Android sino también al proyecto en general."
+        },
+        {
+          "text": "Realicé una nueva aplicación basada en una preexistente, aportando ideas para estabilizar el BackEnd y mejorar las funcionalidades, incluyendo un nuevo proceso que reemplazó el core de venta de saldo."
+        },
+        {
+          "text": "Gestioné un equipo de 10 personas (QA, BackEnd, Android, UX)."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Jenkins",
+          "value": 9
+        },
+        {
+          "name": "Logstash",
+          "value": 5
+        },
+        {
+          "name": "Unit test",
+          "value": 7
+        },
+        {
+          "name": "Microservices",
+          "value": 6
+        },
+        {
+          "name": "ElasticSearch",
+          "value": 6
+        },
+        {
+          "name": "Analytics",
+          "value": 6
+        },
+        {
+          "name": "Openshift",
+          "value": 5
+        },
+        {
+          "name": "Kibana",
+          "value": 5
+        },
+        {
+          "name": "Bash",
+          "value": 8
+        },
+        {
+          "name": "Docker",
+          "value": 6
+        },
+        {
+          "name": "Dagger",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "title": "Líder técnico Android",
+      "company": "Globallogic",
+      "from": "Abril de 2017",
+      "to": "Agosto de 2020",
+      "description": [
+        {
+          "text": "Desarrollo de 3 aplicaciones Android con un core en común según los lineamientos de diseño solicitados. Dichas aplicaciones se comunican con un servidor que se encuentra dentro del avión el cual provee información a la aplicación y permite interactuar como control de las funcionalidades provistas para el confort de los pasajeros.\nLiderazgo de una de las 3 aplicaciones, trabajando en conjunto con otros líderes para coordinar el trabajo de cada célula desarrollando componentes compartidos."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Dagger",
+          "value": 5
+        },
+        {
+          "name": "Arquitectura",
+          "value": 6
+        },
+        {
+          "name": "GRPC",
+          "value": 5
+        },
+        {
+          "name": "Sonar",
+          "value": 5
+        },
+        {
+          "name": "Lint",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "title": "Desarrollador Android Senior",
+      "company": "Globallogic",
+      "from": "Abril de 2016",
+      "to": "Abril de 2017",
+      "description": [
+        {
+          "text": "Desarrollo de una aplicación Android utilizada para el equipo de ventas de 9 países diferentes, la cual provee información y soporte a los vendedores para realizar las ventas.\nDiseño e implementación de la aplicación android.\n"
+        }
+      ],
+      "competences": [
+        {
+          "name": "SQLite",
+          "value": 8
+        },
+        {
+          "name": "OAuth 2",
+          "value": 8
+        },
+        {
+          "name": "Google Play Distribution",
+          "value": 7
+        },
+        {
+          "name": "Jenkins",
+          "value": 6
+        },
+        {
+          "name": "i18N",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "title": "Desarrollador Android Semi Senior",
+      "company": "Globallogic",
+      "from": "Diciembre de 2014",
+      "to": "Abril de 2016",
+      "description": [
+        {
+          "text": "Desarrollo de pruebas de concepto en android para el área de marketing utilizando el efecto chroma key, quitando el fondo verde de los videos en tiempo real e incluyendo animaciones en realidad aumentada."
+        }
+      ],
+      "competences": [
+        {
+          "name": "BLE",
+          "value": 6
+        },
+        {
+          "name": "Augmented Reality",
+          "value": 5
+        },
+        {
+          "name": "OpenGL",
+          "value": 3
+        },
+        {
+          "name": "OpenCV",
+          "value": 3
+        },
+        {
+          "name": "NDK",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "title": "Líder técnico Android",
+      "company": "Arzion S.R.L.",
+      "from": "Octubre de 2013",
+      "to": "Noviembre de 2013",
+      "description": [
+        {
+          "text": "Desarrollo de una aplicación para vender productos entre amigos y conocidos. Colaboración en la definición del diseño y de la arquitectura de la solución."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Bitmap/Canvas",
+          "value": 7
+        },
+        {
+          "name": "Memory leaks",
+          "value": 6
+        },
+        {
+          "name": "Web Sockets",
+          "value": 4
+        },
+        {
+          "name": "Push notifications",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "title": "Desarrollador Android",
+      "company": "Arzion S.R.L.",
+      "from": "Noviembre de 2012",
+      "to": "Septiembre de 2013",
+      "description": [
+        {
+          "text": "Desarrollo de red social para compartir secretos con la gente que incluía un chat en tiempo real a través de WebSockets."
+        }
+      ],
+      "competences": [
+        {
+          "name": "Android SDK",
+          "value": 5
+        },
+        {
+          "name": "Lifecycle",
+          "value": 6
+        },
+        {
+          "name": "JSON",
+          "value": 5
+        },
+        {
+          "name": "Google Play Distribution",
+          "value": 4
+        },
+        {
+          "name": "Bash",
+          "value": 3
+        }
+      ]
+    }
+  ]
+}
