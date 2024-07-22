@@ -1,7 +1,6 @@
 require 'date'
 require 'fileutils'
 require 'prawn'
-require 'i18n'
 
 class CV
     include Prawn::View
