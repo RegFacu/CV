@@ -28,7 +28,9 @@ jobs:
           bundler-cache: true
 
       - name: Generate CV
-        run: RUBYLIB=ruby/modules:ruby/classes ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json
+        env:
+          RUBYLIB: $GITHUB_WORKSPACE/ruby/modules:$GITHUB_WORKSPACE/ruby/classes
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json
 
       - name: Show summary information
         run: echo "::notice title=CV::CV Generated"
