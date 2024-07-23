@@ -3,7 +3,7 @@ name: PR validations
 on:
   pull_request:
     branches:
-      - master
+      - develop
     types:
       - synchronize
       - opened
