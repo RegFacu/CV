@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate CV
         env:
-          RUBYLIB: ${{GITHUB_WORKSPACE}}/ruby/modules:${{GITHUB_WORKSPACE}}/ruby/classes
+          RUBYLIB: $GITHUB_WORKSPACE/ruby/modules:$GITHUB_WORKSPACE/ruby/classes
         run: ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json
 
       - name: Show summary information
