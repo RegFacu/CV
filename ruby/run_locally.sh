@@ -1,1 +1,0 @@
-clear && RUBYLIB=ruby/modules:ruby/classes ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json

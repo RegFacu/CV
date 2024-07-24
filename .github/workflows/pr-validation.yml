@@ -1,0 +1,44 @@
+name: PR validations
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - synchronize
+      - opened
+      - reopened
+      - ready_for_review
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-cv-by-ruby:
+    name: CV (Ruby)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Generate CV
+        env:
+          RUBYLIB: $GITHUB_WORKSPACE/ruby/modules:$GITHUB_WORKSPACE/ruby/classes
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json
+
+      - name: Show summary information
+        run: echo "::notice title=CV::CV Generated"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV
+          path: exported/cv_spanish.pdf
+          if-no-files-found: 'error'
+          retention-days: 5

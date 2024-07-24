@@ -1,3 +1,8 @@
+["../../classes", "../../modules"].each do |folder|
+    absolute_path = File.expand_path(folder, __FILE__)
+    $LOAD_PATH.unshift(absolute_path) unless $LOAD_PATH.include?(absolute_path)
+end
+
 require 'optparse'
 require 'json'
 
