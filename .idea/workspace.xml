@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc5853ae-f635-4e3f-8754-3586c30623c6" name="Changes" comment="Proof of concept">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="bc5853ae-f635-4e3f-8754-3586c30623c6" name="Changes" comment="Refactor: Header class">
+      <change afterPath="$PROJECT_DIR$/assets/cell-phone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/location.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruby/classes/Competence.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruby/classes/Factory.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruby/classes/Job.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruby/classes/Text.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruby/classes/Title.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/photo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/photo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/spanish.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/spanish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruby/classes/CV.rb" beforeDir="false" afterPath="$PROJECT_DIR$/ruby/classes/CV.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exported/cv_spanish.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/exported/cv_spanish.pdf" afterDir="false" />
+    </list>
+    <list id="716a660f-80a4-4107-b3f5-45809895c943" name="Ignored" comment="Ignored">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +49,7 @@
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="87ed81d4eb18bffb34a59e37b28938464ebc3f63" />
+    <option name="onto" value="b8fa07d37eacae68b0a1a2e72ae2532d1ab86d12" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -113,6 +127,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Proof of concept" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proof of concept" />
+    <MESSAGE value="Remove unnecessary i18n import" />
+    <MESSAGE value="Update bundler and ruby-version" />
+    <MESSAGE value="Add script to configure ruby locally (for Mac)" />
+    <MESSAGE value="Add workflow to validate CV generation" />
+    <MESSAGE value="Change branch trigger" />
+    <MESSAGE value="Upload artifacts" />
+    <MESSAGE value="Show info in GHA summary" />
+    <MESSAGE value="Remove draft condition given it's not available on this repo" />
+    <MESSAGE value="Fix RUBYLIB env" />
+    <MESSAGE value="Fix $GITHUB_WORKSPACE reference" />
+    <MESSAGE value="Move RUBYLIB to script call" />
+    <MESSAGE value="Use bundle exec for running ruby" />
+    <MESSAGE value="Use LOAD_PATH instead of RUBYLIB" />
+    <MESSAGE value="Refactor: Header  class" />
+    <MESSAGE value="Refactor: Section class" />
+    <MESSAGE value="Refactor: Header class" />
+    <MESSAGE value="Refactor: Header class" />
+    <MESSAGE value="Ignored" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignored" />
   </component>
 </project>

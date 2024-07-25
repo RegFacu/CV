@@ -2,6 +2,8 @@ require 'date'
 require 'fileutils'
 require 'prawn'
 
+require 'Factory'
+
 class CV
     include Prawn::View
 
@@ -20,71 +22,10 @@ class CV
     end
 
     def write_content()
-        write_header()
-        @json.content.each do |section|
+        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme.header).write_content()
+        @json.data.sections.each do |section|
             write_section(section)
         end
-    end
-
-    def write_header()
-        header_height = @json.theme.header.height
-
-        # Draw header background color
-        stops = {
-            0 => @json.theme.header.background_start_gradiant_color,
-            1 => @json.theme.header.background_end_gradiant_color
-        }
-        fill_gradient from: [0, bounds.height], to: [bounds.width, bounds.height - header_height], stops: stops
-        fill_rectangle [0, bounds.height], bounds.width, header_height
-
-        # Draw photo image
-        header_padding = @json.theme.header.padding
-        image_size = header_height - header_padding * 2
-        image_x = header_padding
-        image_y = bounds.height - header_padding
-        save_graphics_state do
-            # Circle image crop
-            soft_mask do
-                fill_color 0,0,0,0
-                fill_circle [image_x + image_size/2, image_y - image_size/2], image_size/2
-            end
-
-            image @json.personal_info.photo_path, at: [image_x, image_y], width: image_size, height: image_size
-        end
-
-        # Text color
-        fill_color @json.theme.header.text_color
-
-        left_position = image_size + header_padding * 2
-        start_y_position = bounds.height - header_padding
-
-        name_height = image_size / 5
-        title_height = image_size / 7
-        contact_height = image_size / 12
-        gap_height = (image_size - name_height - title_height - contact_height) / 4 # Gap at top, bottom and between rows (2)
-
-        font_size 150 # Ensure we have enough size to make as big as possible
-        text_box @json.personal_info.full_name,
-            at: [left_position, start_y_position - gap_height],
-            width: bounds.width - left_position * 2,
-            height: name_height,
-            align: :left,
-            overflow: :shrink_to_fit
-        text_box @json.personal_info.title,
-            at: [left_position, start_y_position - gap_height - name_height - gap_height],
-            width: bounds.width - left_position * 2,
-            height: title_height,
-            align: :left,
-            overflow: :shrink_to_fit
-        text_box "#{@json.personal_info.phone} - #{@json.personal_info.email} - #{@json.personal_info.country} (GMT#{@json.personal_info.time_zone})",
-            at: [left_position, start_y_position - gap_height - name_height - gap_height - title_height - gap_height],
-            width: bounds.width - left_position * 2,
-            height: contact_height,
-            align: :left,
-            overflow: :shrink_to_fit
-
-        move_cursor_to bounds.height - header_height
-        font_size 12
     end
 
     def custom_text_box(text, options, move_down = true)
