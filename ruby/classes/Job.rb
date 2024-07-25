@@ -10,14 +10,6 @@ class Job
         @to = data.to
         @theme = theme
         @document = document
-        @left_column = []
-        data.description.each do |object|
-            @left_column << Factory.create_class(Factory::TEXT, @document, object, theme)
-        end
-        @right_column = []
-        data.competences.each do |object|
-            @right_column << Factory.create_class(Factory::COMPETENCE, @document, object, theme)
-        end
 
         @gap = @theme.section.gap
     end
@@ -34,8 +26,8 @@ class Job
             width: available_width,
             valign: :center
         }
-        title_height = height_of(@title, default_options.merge({size: @theme.name_font_size}))
-        company_height = height_of(@company, default_options.merge({size: @theme.title_font_size}))
+        title_height = height_of(@title, default_options.merge({size: @theme.section.title_text_size}))
+        company_height = height_of(@company, default_options.merge({size: @theme.section.default_text_size}))
         height = [title_height, company_height].max
 
         left_position += @gap + draw_horizontally(
@@ -62,12 +54,6 @@ class Job
                 {text: @to}
             ])
 
-        @left_column.each do |element|
-            element.write_content()
-        end
-        @right_column.each do |element|
-            element.write_content()
-        end
         move_down height
     end
 

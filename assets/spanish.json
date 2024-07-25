@@ -85,8 +85,8 @@
         "name": "Experiencia profesional"
       },
       {
-        "type": "job",
         "title": "DevOps Android Engineer",
+        "type": "job",
         "company": "Greenlight",
         "from": "Marzo de 2022",
         "to": "Actual",
@@ -136,6 +136,7 @@
       },
       {
         "title": "Android Engineer",
+        "type": "job",
         "company": "Venmo/PayPal",
         "from": "Enero de 2021",
         "to": "Marzo de 2022",
@@ -169,6 +170,7 @@
       },
       {
         "title": "Referente del área mobile",
+        "type": "job",
         "company": "Globallogic",
         "from": "Agosto de 2020",
         "to": "Enero de 2021",
@@ -232,6 +234,7 @@
       },
       {
         "title": "Líder técnico Android",
+        "type": "job",
         "company": "Globallogic",
         "from": "Abril de 2017",
         "to": "Agosto de 2020",
@@ -265,6 +268,7 @@
       },
       {
         "title": "Desarrollador Android Senior",
+        "type": "job",
         "company": "Globallogic",
         "from": "Abril de 2016",
         "to": "Abril de 2017",
@@ -298,6 +302,7 @@
       },
       {
         "title": "Desarrollador Android Semi Senior",
+        "type": "job",
         "company": "Globallogic",
         "from": "Diciembre de 2014",
         "to": "Abril de 2016",
@@ -331,6 +336,7 @@
       },
       {
         "title": "Líder técnico Android",
+        "type": "job",
         "company": "Arzion S.R.L.",
         "from": "Octubre de 2013",
         "to": "Noviembre de 2013",
@@ -360,6 +366,7 @@
       },
       {
         "title": "Desarrollador Android",
+        "type": "job",
         "company": "Arzion S.R.L.",
         "from": "Noviembre de 2012",
         "to": "Septiembre de 2013",

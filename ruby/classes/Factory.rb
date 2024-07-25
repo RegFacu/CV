@@ -1,5 +1,6 @@
 require 'Header'
 require 'Title'
+require 'Job'
 
 class Factory
     HEADER = "header"
