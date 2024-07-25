@@ -24,7 +24,16 @@ class CV
     def write_content()
         Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme.header).write_content()
         @json.data.sections.each do |section|
-            write_section(section)
+            gap = @json.theme.section.gap
+            move_down(gap)
+            begin
+                clazz = Factory.create_class(section.type, document, section, @json.theme)
+                start_new_page unless clazz.fit(cursor - gap)
+                clazz.write_content()
+            rescue => error
+                p error
+                write_section(section)
+            end
         end
     end
 
@@ -40,7 +49,6 @@ class CV
 
     def write_section(section)
         gap = @json.theme.section.gap
-        move_down(gap)
         if section.name
             fill_color @json.theme.primary_color
             font_size @json.theme.section.name_text_size
