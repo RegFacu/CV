@@ -9,8 +9,8 @@ class Text
         @bullet = data.bullet
         @theme = theme
         @available_width = available_width
-        @bullet_radius = @theme.bullet_radius
-        @bullet_gap = @theme.section.gap
+        @bullet_radius = @theme.components.text.bullet_radius
+        @bullet_gap = @theme.spacing[@theme.components.text.bullet_spacing]
     end
 
     def text_box(horizontal_cursor = 0)
@@ -20,15 +20,18 @@ class Text
             bullet_width = @bullet_radius * 2 + @bullet_gap
             available_width = available_width - bullet_width
         end
+
+        text = @text
+        font_size = @theme.fonts[@theme.components.text.text_size]
         options = {
             document: @document,
             at: [horizontal_cursor + bullet_width, cursor],
             width: available_width,
-            height: height_of(@text, {size: @theme.section.default_text_size}),
-            size: @theme.section.default_text_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = Prawn::Text::Box.new(@text, options)
+        box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
         return box
     end
@@ -42,12 +45,12 @@ class Text
     end
 
     def write_content(horizontal_cursor)
-        fill_color @theme.default_color
-
         if @bullet != nil
+            fill_color @theme.colors[@theme.components.text.bullet_color]
             fill_ellipse [horizontal_cursor + @bullet_radius, cursor - @bullet_radius * 2], @bullet_radius
         end
 
+        fill_color @theme.colors[@theme.components.text.color]
         box = text_box(horizontal_cursor)
         box.render()
         move_down box.height

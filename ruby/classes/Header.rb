@@ -11,76 +11,86 @@ class Header
         @theme = theme
         @available_width = available_width
 
-        @height = @theme.height
-        @padding = @theme.padding
+        @height = @theme.components.header.height
+        @padding = @theme.spacing[@theme.components.header.padding]
     end
 
     def full_name_box(horizontal_cursor = 0)
+        text = @data.full_name
+        font_size = @theme.fonts[@theme.components.header.name_font_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(@data.full_name, {size: @theme.name_font_size}),
-            size: @theme.name_font_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = Prawn::Text::Box.new(@data.full_name, options)
+        box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def title_box(horizontal_cursor = 0)
+        text = @data.title
+        font_size = @theme.fonts[@theme.components.header.title_font_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(@data.title, {size: @theme.title_font_size}),
-            size: @theme.title_font_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = Prawn::Text::Box.new(@data.title, options)
+        box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def phone_box(horizontal_cursor = 0)
+        text = @data.phone
+        font_size = @theme.fonts[@theme.components.header.contact_font_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(@data.phone, {size: @theme.contact_font_size}),
-            size: @theme.contact_font_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = CustomBox.new(@data.phone, options)
+        box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def email_box(horizontal_cursor = 0)
+        text = @data.email
+        font_size = @theme.fonts[@theme.components.header.contact_font_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(@data.email, {size: @theme.contact_font_size}),
-            size: @theme.contact_font_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = CustomBox.new(@data.email, options)
+        box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def country_box(horizontal_cursor = 0)
+        text = "#{@data.country} (GMT#{@data.time_zone})"
+        font_size = @theme.fonts[@theme.components.header.contact_font_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of("#{@data.country} (GMT#{@data.time_zone})", {size: @theme.contact_font_size}),
-            size: @theme.contact_font_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = CustomBox.new("#{@data.country} (GMT#{@data.time_zone})", options)
+        box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
     end
@@ -90,8 +100,8 @@ class Header
         image_size = draw_photo()
 
         # Maths for dynamic text position
-        horizontal_cursor += image_size + @padding * 2
-        @available_width = @available_width - horizontal_cursor - @padding # Space between the image and the end of the document
+        horizontal_cursor += image_size + @padding * 2 # Move cursor to the right and add spacing after image
+        @available_width = @available_width - horizontal_cursor - @padding # Space between the image and the end of the document (without padding)
         name_height = full_name_box().line_height
         title_height = title_box().line_height
         contact_height = phone_box().line_height
@@ -100,40 +110,40 @@ class Header
         gap_height = total_gap_height / 4 # Gap at top, bottom and between rows (2)
 
         move_down @padding + gap_height
+        line_left_position = horizontal_cursor
 
-        fill_color @theme.primary_color
-        box = full_name_box(horizontal_cursor)
+        fill_color @theme.colors[@theme.components.header.name_color]
+        box = full_name_box(line_left_position)
         box.render()
 
         move_down box.line_height + gap_height
+        line_left_position = horizontal_cursor
 
-        fill_color @theme.secondary_text_color
-        box = title_box(horizontal_cursor)
+        fill_color @theme.colors[@theme.components.header.title_color]
+        box = title_box(line_left_position)
         box.render()
 
         move_down box.line_height + gap_height
+        line_left_position = horizontal_cursor
 
-        left_position = horizontal_cursor
-        descender = 0
+        svg_drawn = draw_icon(@theme.components.header.cell_phone_icon, line_left_position, icon_height)
+        line_left_position += svg_drawn[:width]
 
-        svg_drawn = draw_icon(@theme.cell_phone_icon, left_position, icon_height)
-        left_position += svg_drawn[:width]
-
-        box = phone_box(left_position)
+        box = phone_box(line_left_position)
         box.render()
-        left_position += box.measured_width + @padding
+        line_left_position += box.measured_width + @padding
 
-        svg_drawn = draw_icon(@theme.email_icon, left_position, icon_height)
-        left_position += svg_drawn[:width]
+        svg_drawn = draw_icon(@theme.components.header.email_icon, line_left_position, icon_height)
+        line_left_position += svg_drawn[:width]
 
-        box = email_box(left_position)
+        box = email_box(line_left_position)
         box.render()
-        left_position += box.measured_width + @padding
+        line_left_position += box.measured_width + @padding
 
-        svg_drawn = draw_icon(@theme.location_icon, left_position, icon_height)
-        left_position += svg_drawn[:width]
+        svg_drawn = draw_icon(@theme.components.header.location_icon, line_left_position, icon_height)
+        line_left_position += svg_drawn[:width]
 
-        box = country_box(left_position)
+        box = country_box(line_left_position)
         box.render()
         move_down box.line_height + gap_height
 
@@ -142,8 +152,8 @@ class Header
 
     def draw_background()
         stops = {
-            0 => @theme.background_start_gradiant_color,
-            1 => @theme.background_end_gradiant_color
+            0 => @theme.colors[@theme.components.header.start_gradiant_color],
+            1 => @theme.colors[@theme.components.header.end_gradiant_color]
         }
         fill_gradient from: [0, bounds.height], to: [@available_width, bounds.height - @height], stops: stops
         fill_rectangle [0, bounds.height], @available_width, @height
@@ -167,7 +177,7 @@ class Header
 
     def draw_icon(icon, x, height)
         svg_data = IO.read(icon)
-        svg_data = svg_data.gsub! "#000000", "##{@theme.primary_color}"
+        svg_data = svg_data.gsub! "#000000", "##{@theme.colors[@theme.components.header.icon_color]}"
         saved_cursor = cursor
         svg_drawn = svg svg_data, at: [x, cursor], height: height
         move_cursor_to saved_cursor

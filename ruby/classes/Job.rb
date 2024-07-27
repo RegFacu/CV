@@ -7,54 +7,57 @@ class Job < Summary
         @company = data.company
         @from = data.from
         @to = data.to
+        @title_spacing = @theme.spacing[@theme.components.job.title_spacing]
     end
 
     def title_box(horizontal_cursor = 0, height = nil)
+        text = @title
+        font_size = @theme.fonts[@theme.components.job.title_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height || height_of(@title, {size: @theme.section.name_text_size}),
-            size: @theme.section.name_text_size,
+            height: height || height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = CustomBox.new(@title, options)
+        box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def company_box(horizontal_cursor = 0, height = nil)
+        text = "#{@company} - #{@from} - #{@to}"
+        font_size = @theme.fonts[@theme.components.job.company_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height || height_of(@title, {size: @theme.section.company_text_size}),
-            size: @theme.section.company_text_size,
+            height: height || height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = CustomBox.new("#{@company} - #{@from} - #{@to}", options)
+        box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
     end
 
     def fit(horizontal_cursor, remaining_space)
         @job_height = [title_box(horizontal_cursor).height, company_box(horizontal_cursor).height].max
-        return @job_height + @theme.section.title_spacing + measure_height(horizontal_cursor) < remaining_space
+        return @job_height + @title_spacing + measure_height(horizontal_cursor) < remaining_space
     end
 
     def write_content(horizontal_cursor)
-        fill_color @theme.secondary_color
+        fill_color @theme.colors[@theme.components.job.title_color]
         title_box = title_box(horizontal_cursor, @job_height)
         title_box.render()
 
-        space_between_text = @gap
-
-        fill_color @theme.default_color
+        fill_color @theme.colors[@theme.components.job.company_color]
         company_box = company_box(horizontal_cursor + title_box.measured_width + space_between_text, @job_height)
         company_box.render()
 
         move_down [title_box.height, company_box.height].max
-        move_down @theme.section.title_spacing
+        move_down @title_spacing
         super
     end
 end

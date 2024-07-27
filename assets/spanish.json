@@ -1,38 +1,91 @@
 {
   "theme": {
-    "background_color": "FFFFFF",
-    "default_color": "000000",
-    "primary_color": "536ef5",
-    "secondary_color": "5eb58f",
-    "header": {
-      "primary_color": "536ef5",
-      "primary_text_color": "000000",
-      "secondary_text_color": "555555",
-      "height": 150,
-      "padding": 15,
-      "name_font_size": 28,
-      "title_font_size": 20,
-      "contact_font_size": 10,
-      "background_start_gradiant_color": "abcdef",
-      "background_end_gradiant_color": "c7deff",
-      "cell_phone_icon": "assets/cell-phone.svg",
-      "email_icon": "assets/email.svg",
-      "location_icon": "assets/location.svg"
+    "components": {
+      "header": {
+        "height": 150,
+        "padding": "xxl",
+        "name_font_size": "xxl",
+        "title_font_size": "xl",
+        "contact_font_size": "xs",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "name_color": "white",
+        "title_color": "white",
+        "contact_color": "white",
+        "icon_color": "white",
+        "cell_phone_icon": "assets/cell-phone.svg",
+        "email_icon": "assets/email.svg",
+        "location_icon": "assets/location.svg"
+      },
+      "title": {
+        "text_size": "xxl",
+        "color": "midnight_blue",
+        "spacing": "l"
+      },
+      "summary": {
+        "left_column_width": 400,
+        "space_between_columns": "l",
+        "space_between_rows": "m"
+      },
+      "job": {
+        "title_text_size": "l",
+        "title_color": "dark_blue",
+        "company_text_size": "m",
+        "company_color": "blue_gray",
+        "title_spacing": "m"
+      },
+      "text": {
+        "text_size": "s",
+        "color": "black",
+        "bullet_radius": 3,
+        "bullet_spacing": "l",
+        "bullet_color": "midnight_blue"
+      },
+      "competence": {
+        "text_size": "s",
+        "color": "black",
+        "spacing": "xs",
+        "line_size": "l",
+        "background_color": "baby_blue",
+        "filled_color": "midnight_blue"
+      }
     },
-    "padding": 12,
-    "section": {
-      "gap": 8,
-      "small_text_size": 10,
-      "default_text_size": 12,
-      "title_text_size": 26,
-      "company_text_size": 14,
-      "title_spacing": 4,
-      "name_text_size": 16
+    "colors": {
+      "white": "FFFFFF",
+      "black": "000000",
+      "midnight_blue": "41729F",
+      "blue_gray": "5885AF",
+      "dark_blue": "274472",
+      "baby_blue": "C3E0E5"
     },
-    "bullet_radius": 3,
-    "column_width": 400,
-    "competence_spacing": 5,
-    "competence_line_size": 4
+    "fonts": {
+      "xs": 10,
+      "s": 12,
+      "m": 14,
+      "l": 16,
+      "xl": 20,
+      "xxl": 26
+    },
+    "spacing": {
+      "xs": 2,
+      "s": 4,
+      "m": 5,
+      "l": 8,
+      "xl": 10,
+      "xxl": 12
+    },
+    "lines": {
+      "xs": 1,
+      "s": 2,
+      "m": 3,
+      "l": 4,
+      "xl": 5,
+      "xxl": 6
+    },
+    "background_color": "white",
+    "padding": "xxl",
+    "space_between_components": "s",
+    "default_font": "Times-Roman"
   },
   "data": {
     "header": {

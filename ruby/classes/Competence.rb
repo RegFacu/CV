@@ -9,18 +9,23 @@ class Competence
         @value = data.value
         @theme = theme
         @available_width = available_width
+
+        @line_size = @theme.lines[@theme.components.competence.line_size]
+        @spacing = @theme.spacing[@theme.components.competence.spacing]
     end
 
     def name_box(horizontal_cursor)
+        text = @name
+        font_size = @theme.fonts[@theme.components.competence.text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(@name, {size: @theme.section.small_text_size}),
-            size: @theme.section.small_text_size,
+            height: height_of(text, {size: font_size}),
+            size: font_size,
             valign: :center
         }
-        box = Prawn::Text::Box.new(@name, options)
+        box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
         return box
     end
@@ -30,28 +35,27 @@ class Competence
     end
 
     def measure_height(horizontal_cursor)
-        return name_box(horizontal_cursor).height + @theme.competence_spacing + @theme.competence_line_size
+        return name_box(horizontal_cursor).line_height + @spacing + @line_size
     end
 
     def write_content(horizontal_cursor)
-        fill_color @theme.default_color
-        font_size @theme.section.small_text_size
+        fill_color @theme.colors[@theme.components.competence.color]
 
         left_position = horizontal_cursor
         right_position = horizontal_cursor + @available_width
 
-        self.line_width = @theme.competence_line_size
+        self.line_width = @line_size
 
         self.cap_style = :round
         box = name_box(horizontal_cursor)
         box.render()
-        move_down box.height
-        move_down @theme.competence_spacing
+        move_down box.line_height
+        move_down @spacing
 
-        stroke_color @theme.secondary_color
+        stroke_color @theme.colors[@theme.components.competence.background_color]
         stroke_horizontal_line left_position, right_position, at: cursor - self.line_width / 2
 
-        stroke_color @theme.primary_color
+        stroke_color @theme.colors[@theme.components.competence.filled_color]
         stroke_horizontal_line left_position, left_position + ((right_position - left_position) / 10 * @value), at: cursor - self.line_width / 2
 
         move_down self.line_width

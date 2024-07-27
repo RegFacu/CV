@@ -9,6 +9,10 @@ class CV
 
     def initialize(json)
         @json = json
+        @theme = json.theme
+        @gap = @theme.spacing[@theme.space_between_components]
+        @padding = @theme.spacing[@theme.padding]
+        font json.theme.default_font
         draw_background_color()
     end
 
@@ -17,30 +21,27 @@ class CV
     end
 
     def draw_background_color()
-        fill_color @json.theme.background_color
+        fill_color @json.theme.colors[@json.theme.background_color]
         fill_rectangle [0, bounds.height], bounds.width, bounds.height
     end
 
     def write_content()
-        padding = @json.theme.padding
-        gap = @json.theme.section.gap
-
         available_width = bounds.width # Full available width for header
-        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme.header, available_width).write_content(0)
+        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme, available_width).write_content(0)
 
-        available_width = bounds.width - padding * 2 # Left and right padding for content
-        move_down(padding) # Top padding
+        available_width = bounds.width - @padding * 2 # Left and right padding for content
+        move_down(@padding) # Top padding
         @json.data.sections.each do |section|
             clazz = Factory.create_class(section.type, document, section, @json.theme, available_width)
-            horizontal_cursor = padding
-            remaining_space = cursor - padding # Bottom padding
+            horizontal_cursor = @padding
+            remaining_space = cursor - @padding # Bottom padding
             if ! clazz.fit(horizontal_cursor, remaining_space)
                 start_new_page
-                move_down(padding) # Top padding for new page
+                move_down(@padding) # Top padding for new page
             end
 
             clazz.write_content(horizontal_cursor)
-            move_down(gap)
+            move_down(@gap)
         end
     end
 
