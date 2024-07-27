@@ -8,6 +8,7 @@ class Job < Summary
         @from = data.from
         @to = data.to
         @title_spacing = @theme.spacing[@theme.components.job.title_spacing]
+        @space_between_texts = @theme.spacing[@theme.components.job.space_between_texts]
     end
 
     def title_box(horizontal_cursor = 0, height = nil)
@@ -43,7 +44,7 @@ class Job < Summary
     end
 
     def fit(horizontal_cursor, remaining_space)
-        @job_height = [title_box(horizontal_cursor).height, company_box(horizontal_cursor).height].max
+        @job_height = [title_box(horizontal_cursor).line_height, company_box(horizontal_cursor).line_height].max
         return @job_height + @title_spacing + measure_height(horizontal_cursor) < remaining_space
     end
 
@@ -53,10 +54,10 @@ class Job < Summary
         title_box.render()
 
         fill_color @theme.colors[@theme.components.job.company_color]
-        company_box = company_box(horizontal_cursor + title_box.measured_width + space_between_text, @job_height)
+        company_box = company_box(horizontal_cursor + title_box.measured_width + @space_between_texts, @job_height)
         company_box.render()
 
-        move_down [title_box.height, company_box.height].max
+        move_down [title_box.line_height, company_box.line_height].max
         move_down @title_spacing
         super
     end

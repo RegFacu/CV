@@ -32,7 +32,8 @@
         "title_color": "dark_blue",
         "company_text_size": "m",
         "company_color": "blue_gray",
-        "title_spacing": "m"
+        "title_spacing": "m",
+        "space_between_texts": "s"
       },
       "text": {
         "text_size": "s",
