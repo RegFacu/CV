@@ -26,14 +26,9 @@ class CV
         @json.data.sections.each do |section|
             gap = @json.theme.section.gap
             move_down(gap)
-            begin
-                clazz = Factory.create_class(section.type, document, section, @json.theme)
-                start_new_page unless clazz.fit(cursor - gap)
-                clazz.write_content()
-            rescue => error
-                p error
-                write_section(section)
-            end
+            clazz = Factory.create_class(section.type, document, section, @json.theme)
+            start_new_page unless clazz.fit(cursor - gap)
+            clazz.write_content()
         end
     end
 

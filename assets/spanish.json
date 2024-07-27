@@ -40,6 +40,7 @@
         "name": "Resumen profesional"
       },
       {
+        "type": "summary",
         "description": [
           {
             "text": "Líder técnico con más de 8 años de experiencia en el desarrollo de aplicaciones android. Me considero un líder natural en quien mis compañeros se apoyan para resolver los problemas y acompañarlos en las soluciones a aplicar."
