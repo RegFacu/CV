@@ -1,109 +1,60 @@
-require 'prawn'
+require 'CustomBox'
 
-class Job
-    include Prawn::View
-
-    def initialize(document, data, theme)
+class Job < Summary
+    def initialize(document, data, theme, available_width)
+        super
         @title = data.title
         @company = data.company
         @from = data.from
         @to = data.to
-        @theme = theme
-        @document = document
-        @gap = @theme.section.gap
-        @left_column = []
-        @right_column = []
-
-        data.description.each do |object|
-            @left_column << Factory.create_class(Factory::TEXT, @document, object, theme)
-        end
-        data.competences.each do |object|
-            @right_column << Factory.create_class(Factory::COMPETENCE, @document, object, theme)
-        end
     end
 
-    def fit(remaining_space)
-        height = height_of(@title)
-        left_column_height = 0
-        right_column_height = 0
-        @left_column.each_with_index do |element, index|
-            left_column_height += @gap if index > 0
-            left_column_height += element.measure_height()
-        end
-        @right_column.each_with_index do |element, index|
-            right_column_height += @gap if index > 0
-            right_column_height += element.measure_height()
-        end
-        height += [left_column_height, right_column_height].max
-        return height < remaining_space
-    end
-
-    def write_content()
-        left_position = @gap
-        available_width = bounds.width - left_position - @gap # Space between the image and the end of the document
-        default_options = {
+    def title_box(horizontal_cursor = 0, height = nil)
+        options = {
             document: @document,
-            width: available_width,
+            at: [horizontal_cursor, cursor],
+            width: @available_width,
+            height: height || height_of(@title, {size: @theme.section.name_text_size}),
+            size: @theme.section.name_text_size,
             valign: :center
         }
-        title_height = height_of(@title, default_options.merge({size: @theme.section.title_text_size}))
-        company_height = height_of(@company, default_options.merge({size: @theme.section.default_text_size}))
-        height = [title_height, company_height].max
-
-        left_position += @gap + draw_horizontally(
-            default_options,
-            left_position,
-            0,
-            height,
-            @theme.secondary_color,
-            @theme.section.title_text_size,
-            [{text: @title}])
-
-        draw_horizontally(
-            default_options,
-            left_position,
-            0,
-            height,
-            @theme.default_color,
-            @theme.section.default_text_size,
-            [
-                {text: @company},
-                {text: "-"},
-                {text: @from},
-                {text: "-"},
-                {text: @to}
-            ])
-        move_down height + @gap
-
-        saved_cursor = cursor
-        @left_column.each_with_index do |element, index|
-            move_down @gap if index > 0
-            element.write_content()
-        end
-        move_cursor_to saved_cursor
-        @right_column.each_with_index do |element, index|
-            move_down @gap if index > 0
-            element.write_content()
-        end
-        move_cursor_to [saved_cursor, cursor].min
+        box = CustomBox.new(@title, options)
+        box.render(:dry_run => true)
+        return box
     end
 
-    def draw_horizontally(default_options, x, delta_y, height, fill_color, font_size, values)
-        fill_color fill_color
-        font_size font_size
-        left_position = x
-        values.each do |value|
-            text = value[:text]
-            options = default_options.merge({
-                at: [left_position, cursor - delta_y],
-                height: height,
-                available_width: bounds.width - left_position - @gap
-            })
-            text_box(text, options)
-            width = width_of(text, options)
+    def company_box(horizontal_cursor = 0, height = nil)
+        options = {
+            document: @document,
+            at: [horizontal_cursor, cursor],
+            width: @available_width,
+            height: height || height_of(@title, {size: @theme.section.company_text_size}),
+            size: @theme.section.company_text_size,
+            valign: :center
+        }
+        box = CustomBox.new("#{@company} - #{@from} - #{@to}", options)
+        box.render(:dry_run => true)
+        return box
+    end
 
-            left_position += width + @gap
-        end
-        return left_position
+    def fit(horizontal_cursor, remaining_space)
+        @job_height = [title_box(horizontal_cursor).height, company_box(horizontal_cursor).height].max
+        return @job_height + @theme.section.title_spacing + measure_height(horizontal_cursor) < remaining_space
+    end
+
+    def write_content(horizontal_cursor)
+        fill_color @theme.secondary_color
+        title_box = title_box(horizontal_cursor, @job_height)
+        title_box.render()
+
+        space_between_text = @gap
+
+        fill_color @theme.default_color
+        company_box = company_box(horizontal_cursor + title_box.measured_width + space_between_text, @job_height)
+        company_box.render()
+
+        move_down [title_box.height, company_box.height].max
+        move_down @theme.section.title_spacing
+        super
     end
 end

@@ -22,13 +22,25 @@ class CV
     end
 
     def write_content()
-        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme.header).write_content()
+        padding = @json.theme.padding
+        gap = @json.theme.section.gap
+
+        available_width = bounds.width # Full available width for header
+        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme.header, available_width).write_content(0)
+
+        available_width = bounds.width - padding * 2 # Left and right padding for content
+        move_down(padding) # Top padding
         @json.data.sections.each do |section|
-            gap = @json.theme.section.gap
+            clazz = Factory.create_class(section.type, document, section, @json.theme, available_width)
+            horizontal_cursor = padding
+            remaining_space = cursor - padding # Bottom padding
+            if ! clazz.fit(horizontal_cursor, remaining_space)
+                start_new_page
+                move_down(padding) # Top padding for new page
+            end
+
+            clazz.write_content(horizontal_cursor)
             move_down(gap)
-            clazz = Factory.create_class(section.type, document, section, @json.theme)
-            start_new_page unless clazz.fit(cursor - gap)
-            clazz.write_content()
         end
     end
 

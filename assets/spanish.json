@@ -14,15 +14,25 @@
       "title_font_size": 20,
       "contact_font_size": 10,
       "background_start_gradiant_color": "abcdef",
-      "background_end_gradiant_color": "c7deff"
+      "background_end_gradiant_color": "c7deff",
+      "cell_phone_icon": "assets/cell-phone.svg",
+      "email_icon": "assets/email.svg",
+      "location_icon": "assets/location.svg"
     },
+    "padding": 12,
     "section": {
-      "gap": 10,
+      "gap": 8,
       "small_text_size": 10,
       "default_text_size": 12,
-      "title_text_size": 14,
-      "name_text_size": 18
-    }
+      "title_text_size": 26,
+      "company_text_size": 14,
+      "title_spacing": 4,
+      "name_text_size": 16
+    },
+    "bullet_radius": 3,
+    "column_width": 400,
+    "competence_spacing": 5,
+    "competence_line_size": 4
   },
   "data": {
     "header": {

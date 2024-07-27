@@ -3,23 +3,36 @@ require 'prawn'
 class Title
     include Prawn::View
 
-    def initialize(document, data, theme)
-        @title = data.name
-        @theme = theme
+    def initialize(document, data, theme, available_width)
         @document = document
-
-        @gap = @theme.section.gap
+        @name = data.name
+        @theme = theme
+        @available_width = available_width
     end
 
-    def fit(remaining_space)
-        return height_of(@title) < remaining_space
+    def name_box(horizontal_cursor = 0)
+        options = {
+            document: @document,
+            at: [horizontal_cursor, cursor],
+            width: @available_width,
+            height: height_of(@name, {size: @theme.section.title_text_size}),
+            size: @theme.section.title_text_size,
+            valign: :center
+        }
+        box = Prawn::Text::Box.new(@name, options)
+        box.render(:dry_run => true)
+        return box
     end
 
-    def write_content()
+    def fit(horizontal_cursor, remaining_space)
+        return name_box(horizontal_cursor).height < remaining_space
+    end
+
+    def write_content(horizontal_cursor)
         fill_color @theme.primary_color
-        font_size @theme.section.name_text_size
 
-        text_box(@title, {at: [@gap, cursor], width: bounds.width - @gap })
-        move_down height_of(@title)
+        box = name_box(horizontal_cursor)
+        box.render()
+        move_down box.height
     end
 end
