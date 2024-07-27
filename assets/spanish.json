@@ -4,9 +4,10 @@
       "header": {
         "height": 150,
         "padding": "xxl",
-        "name_font_size": "xxl",
-        "title_font_size": "xl",
-        "contact_font_size": "xs",
+        "valign": "center",
+        "name_text_size": "xxl",
+        "title_text_size": "xl",
+        "contact_text_size": "xs",
         "start_gradiant_color": "midnight_blue",
         "end_gradiant_color": "blue_gray",
         "name_color": "white",
@@ -18,6 +19,7 @@
         "location_icon": "assets/location.svg"
       },
       "title": {
+        "valign": "center",
         "text_size": "xxl",
         "color": "midnight_blue",
         "spacing": "l"
@@ -28,6 +30,7 @@
         "space_between_rows": "m"
       },
       "job": {
+        "valign": "center",
         "title_text_size": "l",
         "title_color": "dark_blue",
         "company_text_size": "m",
@@ -36,6 +39,7 @@
         "space_between_texts": "s"
       },
       "text": {
+        "valign": "center",
         "text_size": "s",
         "color": "black",
         "bullet_radius": 3,
@@ -43,6 +47,7 @@
         "bullet_color": "midnight_blue"
       },
       "competence": {
+        "valign": "center",
         "text_size": "s",
         "color": "black",
         "spacing": "xs",

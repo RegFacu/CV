@@ -29,7 +29,7 @@ class Text
             width: available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.text.valign}"
         }
         box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)

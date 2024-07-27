@@ -17,14 +17,14 @@ class Header
 
     def full_name_box(horizontal_cursor = 0)
         text = @data.full_name
-        font_size = @theme.fonts[@theme.components.header.name_font_size]
+        font_size = @theme.fonts[@theme.components.header.name_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.header.valign}"
         }
         box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
@@ -33,14 +33,14 @@ class Header
 
     def title_box(horizontal_cursor = 0)
         text = @data.title
-        font_size = @theme.fonts[@theme.components.header.title_font_size]
+        font_size = @theme.fonts[@theme.components.header.title_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.header.valign}"
         }
         box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
@@ -49,14 +49,14 @@ class Header
 
     def phone_box(horizontal_cursor = 0)
         text = @data.phone
-        font_size = @theme.fonts[@theme.components.header.contact_font_size]
+        font_size = @theme.fonts[@theme.components.header.contact_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.header.valign}"
         }
         box = CustomBox.new(text, options)
         box.render(:dry_run => true)
@@ -65,14 +65,14 @@ class Header
 
     def email_box(horizontal_cursor = 0)
         text = @data.email
-        font_size = @theme.fonts[@theme.components.header.contact_font_size]
+        font_size = @theme.fonts[@theme.components.header.contact_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.header.valign}"
         }
         box = CustomBox.new(text, options)
         box.render(:dry_run => true)
@@ -81,14 +81,14 @@ class Header
 
     def country_box(horizontal_cursor = 0)
         text = "#{@data.country} (GMT#{@data.time_zone})"
-        font_size = @theme.fonts[@theme.components.header.contact_font_size]
+        font_size = @theme.fonts[@theme.components.header.contact_text_size]
         options = {
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.header.valign}"
         }
         box = CustomBox.new(text, options)
         box.render(:dry_run => true)

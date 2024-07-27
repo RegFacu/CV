@@ -23,7 +23,7 @@ class Competence
             width: @available_width,
             height: height_of(text, {size: font_size}),
             size: font_size,
-            valign: :center
+            valign: :"#{@theme.components.competence.valign}"
         }
         box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
