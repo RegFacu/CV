@@ -10,12 +10,32 @@ class Job
         @to = data.to
         @theme = theme
         @document = document
-
         @gap = @theme.section.gap
+        @left_column = []
+        @right_column = []
+
+        data.description.each do |object|
+            @left_column << Factory.create_class(Factory::TEXT, @document, object, theme)
+        end
+        data.competences.each do |object|
+            @right_column << Factory.create_class(Factory::COMPETENCE, @document, object, theme)
+        end
     end
 
     def fit(remaining_space)
-        return height_of(@title) < remaining_space
+        height = height_of(@title)
+        left_column_height = 0
+        right_column_height = 0
+        @left_column.each_with_index do |element, index|
+            left_column_height += @gap if index > 0
+            left_column_height += element.measure_height()
+        end
+        @right_column.each_with_index do |element, index|
+            right_column_height += @gap if index > 0
+            right_column_height += element.measure_height()
+        end
+        height += [left_column_height, right_column_height].max
+        return height < remaining_space
     end
 
     def write_content()
@@ -53,8 +73,19 @@ class Job
                 {text: "-"},
                 {text: @to}
             ])
+        move_down height + @gap
 
-        move_down height
+        saved_cursor = cursor
+        @left_column.each_with_index do |element, index|
+            move_down @gap if index > 0
+            element.write_content()
+        end
+        move_cursor_to saved_cursor
+        @right_column.each_with_index do |element, index|
+            move_down @gap if index > 0
+            element.write_content()
+        end
+        move_cursor_to [saved_cursor, cursor].min
     end
 
     def draw_horizontally(default_options, x, delta_y, height, fill_color, font_size, values)
