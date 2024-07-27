@@ -45,8 +45,8 @@ class Competence
         right_position = horizontal_cursor + @available_width
 
         self.line_width = @line_size
+        self.cap_style = :"#{@theme.components.competence.cap_style}"
 
-        self.cap_style = :round
         box = name_box(horizontal_cursor)
         box.render()
         move_down box.line_height

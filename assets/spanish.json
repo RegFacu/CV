@@ -48,7 +48,8 @@
         "spacing": "xs",
         "line_size": "l",
         "background_color": "baby_blue",
-        "filled_color": "midnight_blue"
+        "filled_color": "midnight_blue",
+        "cap_style": "round"
       }
     },
     "colors": {
