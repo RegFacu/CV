@@ -3,8 +3,9 @@
     $LOAD_PATH.unshift(absolute_path) unless $LOAD_PATH.include?(absolute_path)
 end
 
-require 'optparse'
 require 'json'
+require 'optparse'
+require 'ostruct'
 
 require 'CV'
 
