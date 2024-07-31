@@ -23,6 +23,7 @@ class Header
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.header.align}",
             valign: :"#{@theme.components.header.valign}"
         }
         options[:height]= height_of(text, options)
@@ -39,6 +40,7 @@ class Header
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.header.align}",
             valign: :"#{@theme.components.header.valign}"
         }
         options[:height]= height_of(text, options)
@@ -55,6 +57,7 @@ class Header
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.header.align}",
             valign: :"#{@theme.components.header.valign}"
         }
         options[:height]= height_of(text, options)
@@ -71,6 +74,7 @@ class Header
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.header.align}",
             valign: :"#{@theme.components.header.valign}"
         }
         options[:height]= height_of(text, options)
@@ -87,6 +91,7 @@ class Header
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.header.align}",
             valign: :"#{@theme.components.header.valign}"
         }
         options[:height]= height_of(text, options)

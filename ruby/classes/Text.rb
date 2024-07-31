@@ -28,6 +28,7 @@ class Text
             at: [horizontal_cursor + bullet_width, cursor],
             width: available_width,
             size: font_size,
+            align: :"#{@theme.components.text.align}",
             valign: :"#{@theme.components.text.valign}"
         }
         options[:height]= height_of(text, options)

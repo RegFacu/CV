@@ -21,6 +21,7 @@ class AlternativeHeader
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.alternative_header.align}",
             valign: :"#{@theme.components.alternative_header.valign}"
         }
         options[:height]= @height - @padding * 2

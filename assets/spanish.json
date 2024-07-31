@@ -4,6 +4,7 @@
       "header": {
         "height": 150,
         "padding": "xxl",
+        "align": "justify",
         "valign": "center",
         "name_text_size": "xxl",
         "title_text_size": "xl",
@@ -23,6 +24,7 @@
         "padding": "l",
         "start_gradiant_color": "midnight_blue",
         "end_gradiant_color": "blue_gray",
+        "align": "justify",
         "valign": "center",
         "text_size": "xl",
         "color": "white"
@@ -32,11 +34,13 @@
         "padding": "l",
         "start_gradiant_color": "midnight_blue",
         "end_gradiant_color": "blue_gray",
+        "align": "justify",
         "valign": "center",
         "text_size": "s",
         "color": "white"
       },
       "title": {
+        "align": "justify",
         "valign": "center",
         "text_size": "xxl",
         "color": "midnight_blue",
@@ -48,6 +52,7 @@
         "space_between_rows": "s"
       },
       "job": {
+        "align": "justify",
         "valign": "center",
         "title_text_size": "l",
         "title_color": "dark_blue",
@@ -57,6 +62,7 @@
         "space_between_texts": "m"
       },
       "text": {
+        "align": "justify",
         "valign": "center",
         "text_size": "xs",
         "color": "black",
@@ -65,6 +71,7 @@
         "bullet_color": "midnight_blue"
       },
       "competence": {
+        "align": "justify",
         "valign": "center",
         "text_size": "xs",
         "color": "black",
