@@ -12,12 +12,23 @@ class CV
         @theme = json.theme
         @space_between_components = @theme.spacing[@theme.space_between_components]
         @padding = @theme.spacing[@theme.padding]
-        font json.theme.default_font
         draw_background_color()
+        set_font(json.theme.default_font)
     end
 
     def document
         @document ||= Prawn::Document.new(page_size: 'A4', margin: 0)
+    end
+
+    def set_font(font)
+        absolute_path = File.expand_path("../../../assets/font", __FILE__)
+        font_families.update(font => {
+            :normal => "#{absolute_path}/#{font}_normal.ttf",
+            :italic => "#{absolute_path}/#{font}_italic.ttf",
+            :bold => "#{absolute_path}/#{font}_bold.ttf",
+            :bold_italic => "#{absolute_path}/#{font}_bold_italic.ttf"
+        })
+        font font
     end
 
     def draw_background_color()
