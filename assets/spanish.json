@@ -122,6 +122,9 @@
       "country": "Argentina",
       "time_zone": "-3"
     },
+    "footer": {
+      "text": "Generado automaticamente por mi usando automatizaciones en https://github.com/RegFacu/CV"
+    },
     "sections": [
       {
         "type": "title",
