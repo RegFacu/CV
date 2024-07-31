@@ -18,6 +18,24 @@
         "email_icon": "assets/email.svg",
         "location_icon": "assets/location.svg"
       },
+      "alternative_header": {
+        "height": 50,
+        "padding": "l",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "valign": "center",
+        "text_size": "xl",
+        "color": "white"
+      },
+      "footer": {
+        "height": 30,
+        "padding": "l",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "valign": "center",
+        "text_size": "s",
+        "color": "white"
+      },
       "title": {
         "valign": "center",
         "text_size": "xxl",
@@ -103,6 +121,9 @@
       "email": "mengonifacundo@gmail.com",
       "country": "Argentina",
       "time_zone": "-3"
+    },
+    "footer": {
+      "text": "Generado automaticamente por mi usando automatizaciones en https://github.com/RegFacu/CV"
     },
     "sections": [
       {

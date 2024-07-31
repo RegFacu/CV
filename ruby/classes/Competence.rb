@@ -21,10 +21,10 @@ class Competence
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height_of(text, {size: font_size}),
             size: font_size,
             valign: :"#{@theme.components.competence.valign}"
         }
+        options[:height]= height_of(text, options)
         box = Prawn::Text::Box.new(text, options)
         box.render(:dry_run => true)
         return box

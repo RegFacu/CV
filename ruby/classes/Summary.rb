@@ -41,16 +41,18 @@ class Summary
     end
 
     def write_content(horizontal_cursor)
-        saved_cursor = cursor
+        original_cursor_position = cursor
         @left_column.each_with_index do |element, index|
             move_down @space_between_rows if index > 0
             element.write_content(horizontal_cursor)
         end
-        move_cursor_to saved_cursor
+        left_cursor_position = cursor
+        move_cursor_to original_cursor_position
         @right_column.each_with_index do |element, index|
             move_down @space_between_rows if index > 0
             element.write_content(horizontal_cursor + @left_column_width + @space_between_columns)
         end
-        move_cursor_to [saved_cursor, cursor].min
+
+        move_cursor_to [left_cursor_position, cursor].min
     end
 end

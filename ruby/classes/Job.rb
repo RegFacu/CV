@@ -18,10 +18,10 @@ class Job < Summary
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height || height_of(text, {size: font_size}),
             size: font_size,
             valign: :"#{@theme.components.job.valign}"
         }
+        options[:height]= height || height_of(text, options)
         box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box
@@ -34,10 +34,10 @@ class Job < Summary
             document: @document,
             at: [horizontal_cursor, cursor],
             width: @available_width,
-            height: height || height_of(text, {size: font_size}),
             size: font_size,
             valign: :"#{@theme.components.job.valign}"
         }
+        options[:height]= height || height_of(text, options)
         box = CustomBox.new(text, options)
         box.render(:dry_run => true)
         return box

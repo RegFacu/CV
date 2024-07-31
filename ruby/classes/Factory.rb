@@ -4,6 +4,9 @@ require 'Summary'
 require 'Job'
 require 'Text'
 require 'Competence'
+require 'Spacing'
+require 'AlternativeHeader'
+require 'Footer'
 
 class Factory
     HEADER = "header"
@@ -12,6 +15,9 @@ class Factory
     JOB = "job"
     TEXT = "text"
     COMPETENCE = "competence"
+    SPACING = "spacing"
+    ALTERNATIVE_HEADER = "alternative_header"
+    FOOTER = "footer"
 
     def self.create_class(type, document, data, theme, available_width)
         case type
@@ -27,6 +33,12 @@ class Factory
           return Text.new(document, data, theme, available_width)
         when COMPETENCE
           return Competence.new(document, data, theme, available_width)
+        when SPACING
+          return Spacing.new(document, data, theme, available_width)
+        when ALTERNATIVE_HEADER
+          return AlternativeHeader.new(document, data, theme, available_width)
+        when FOOTER
+          return Footer.new(document, data, theme, available_width)
         else
           raise "Type of class not valid: #{type}"
         end
