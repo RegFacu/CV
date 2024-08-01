@@ -1,0 +1,630 @@
+{
+  "theme": {
+    "components": {
+      "header": {
+        "height": 150,
+        "padding": "xxl",
+        "align": "justify",
+        "valign": "center",
+        "name_text_size": "xxl",
+        "title_text_size": "xl",
+        "contact_text_size": "xs",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "name_color": "white",
+        "title_color": "white",
+        "contact_color": "white",
+        "icon_color": "white",
+        "cell_phone_icon": "assets/cell-phone.svg",
+        "email_icon": "assets/email.svg",
+        "location_icon": "assets/location.svg"
+      },
+      "alternative_header": {
+        "height": 50,
+        "padding": "l",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "align": "justify",
+        "valign": "center",
+        "text_size": "xl",
+        "color": "white"
+      },
+      "footer": {
+        "height": 30,
+        "padding": "l",
+        "start_gradiant_color": "midnight_blue",
+        "end_gradiant_color": "blue_gray",
+        "align": "justify",
+        "valign": "center",
+        "text_size": "xs",
+        "color": "white"
+      },
+      "title": {
+        "style": "bold",
+        "align": "justify",
+        "valign": "center",
+        "text_size": "xxl",
+        "color": "midnight_blue",
+        "spacing": "l"
+      },
+      "summary": {
+        "left_column_width": 400,
+        "space_between_columns": "xxl",
+        "space_between_rows": "s"
+      },
+      "job": {
+        "align": "justify",
+        "valign": "center",
+        "title_text_size": "l",
+        "title_color": "dark_blue",
+        "company_text_size": "m",
+        "company_color": "blue_gray",
+        "title_spacing": "m",
+        "space_between_texts": "m"
+      },
+      "text": {
+        "align": "justify",
+        "valign": "center",
+        "text_size": "xs",
+        "color": "black",
+        "bullet_radius": 3,
+        "bullet_spacing": "l",
+        "bullet_color": "midnight_blue"
+      },
+      "competence": {
+        "align": "justify",
+        "valign": "center",
+        "text_size": "xs",
+        "color": "black",
+        "spacing": "xs",
+        "line_size": "s",
+        "background_color": "baby_blue",
+        "filled_color": "midnight_blue",
+        "cap_style": "round"
+      }
+    },
+    "colors": {
+      "white": "FFFFFF",
+      "black": "000000",
+      "midnight_blue": "41729F",
+      "blue_gray": "5885AF",
+      "dark_blue": "274472",
+      "baby_blue": "C3E0E5"
+    },
+    "fonts": {
+      "xs": 10,
+      "s": 12,
+      "m": 14,
+      "l": 16,
+      "xl": 20,
+      "xxl": 26
+    },
+    "spacing": {
+      "xs": 2,
+      "s": 4,
+      "m": 6,
+      "l": 9,
+      "xl": 12,
+      "xxl": 15,
+      "xxxl": 20
+    },
+    "lines": {
+      "xs": 1,
+      "s": 2,
+      "m": 3,
+      "l": 4,
+      "xl": 5,
+      "xxl": 6
+    },
+    "background_color": "white",
+    "padding": "xxl",
+    "space_between_components": "xxl",
+    "default_font": "palatinolinotype"
+  },
+  "data": {
+    "header": {
+      "photo_path": "assets/photo.jpg",
+      "full_name": "Facundo Ariel Mengoni",
+      "title": "DevOps Mobile",
+      "phone": "+54 (221) 6161629",
+      "email": "mengonifacundo@gmail.com",
+      "country": "Argentina",
+      "time_zone": "-3"
+    },
+    "footer": {
+      "text": "Generated automatically by https://github.com/RegFacu/CV"
+    },
+    "sections": [
+      {
+        "type": "title",
+        "name": "Professional summary"
+      },
+      {
+        "type": "summary",
+        "description": [
+          {
+            "text": "Technical leader with over 8 years of experience in the development and delivery of Android applications. Known for my natural leadership, effective problem-solving skills, and consistent support for my team."
+          },
+          {
+            "text": "I have collaborated with major clients from various sectors, achieving positive results and notable references. I stay updated with the latest technologies and emerging libraries, always striving to implement best practices."
+          },
+          {
+            "text": "I excel in adapting to project needs, demonstrating exceptional skills in both short-term and long-term problem analysis and resolution.",
+            "bullet": true
+          },
+          {
+            "text": "I am highly organized in tracking tickets and using them for team planning and releases. I leverage technical and management metrics to make informed decisions and efficiently plan tasks.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Planning",
+            "value": 9
+          },
+          {
+            "name": "English",
+            "value": 7.5
+          },
+          {
+            "name": "Quality",
+            "value": 9
+          },
+          {
+            "name": "Analysis capacity",
+            "value": 10
+          },
+          {
+            "name": "Problem resolution",
+            "value": 10
+          },
+          {
+            "name": "Reporting/Metrics",
+            "value": 8.5
+          }
+        ]
+      },
+      {
+        "type": "spacing",
+        "spacing": "l"
+      },
+      {
+        "type": "title",
+        "name": "Professional experience"
+      },
+      {
+        "title": "DevOps Mobile Engineer",
+        "type": "job",
+        "company": "Greenlight",
+        "from": "March 2022",
+        "to": "Present",
+        "description": [
+          {
+            "text": "Responsible for automating infrastructure and the mobile app release process."
+          },
+          {
+            "text": "Defined processes related to development, testing, and release, providing tools for developers and ensuring code quality. Includes distribution through Firebase and TestFlight and monitoring of production errors.",
+            "bullet": true
+          },
+          {
+            "text": "Developed infrastructure for application modularization and architectural needs automation, from distribution in Artifactory to delivery in PlayStore.",
+            "bullet": true
+          },
+          {
+            "text": "Implemented observability in Datadog for infrastructure and application usage metrics, with dashboards and monitors for visualization and anomaly notification, including auto-generation of tickets in Jira.",
+            "bullet": true
+          },
+          {
+            "text": "Supported the Quality Engineering (QE) team by developing tools and automations to ensure deliverable quality, including ticket validation, automatic regressions, unit/integration test execution, and static code checks.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Bitrise",
+            "value": 8.5
+          },
+          {
+            "name": "Datadog",
+            "value": 9.5
+          },
+          {
+            "name": "Ruby",
+            "value": 8
+          },
+          {
+            "name": "Artifactory",
+            "value": 9
+          },
+          {
+            "name": "GitHub Actions",
+            "value": 9.5
+          },
+          {
+            "name": "Docker",
+            "value": 8
+          },
+          {
+            "name": "Automation",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "title": "DevOps Android Engineer",
+        "type": "job",
+        "company": "Venmo/PayPal",
+        "from": "January 2021",
+        "to": "March 2022",
+        "description": [
+          {
+            "text": "Responsible for monitoring and analyzing pipeline stability in Datadog, reporting on daily regression test execution."
+          },
+          {
+            "text": "Collaborated in optimizing pipelines, improving code validation, and reducing execution times for each phase."
+          },
+          {
+            "text": "Configured checks in GitHub to validate pull requests, ensure stability of the develop branch, and manage releases.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Google Play Distribution",
+            "value": 8
+          },
+          {
+            "name": "Python",
+            "value": 7
+          },
+          {
+            "name": "Datadog",
+            "value": 8.5
+          },
+          {
+            "name": "AWS (S3)",
+            "value": 7
+          },
+          {
+            "name": "Static checks",
+            "value": 8
+          },
+          {
+            "name": "GitHub Actions",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "title": "Project/Engineer Manager",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "August 2020",
+        "to": "January 2021",
+        "description": [
+          {
+            "text": "Led the development team, managing technical definitions and planning in collaboration with a major telecommunications client in Latin America."
+          },
+          {
+            "text": "Directed the migration of an existing system for managing internet and phone service sales to a microservices architecture.",
+            "bullet": true
+          },
+          {
+            "text": "Managed a multidisciplinary team of 10 people, including QA, Backend, React, Android, and UX.",
+            "bullet": true
+          },
+          {
+            "text": "Defined key criteria for data analysis in Analytics, optimizing data-driven decision-making.",
+            "bullet": true
+          },
+          {
+            "text": "Collaborated on the technical definition of the application, establishing best practices for Backend and Frontend (Android and Web) integration.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Management",
+            "value": 8
+          },
+          {
+            "name": "Logstash",
+            "value": 5
+          },
+          {
+            "name": "Microservices",
+            "value": 6
+          },
+          {
+            "name": "ElasticSearch",
+            "value": 6
+          },
+          {
+            "name": "Analytics",
+            "value": 7
+          },
+          {
+            "name": "Openshift",
+            "value": 5
+          },
+          {
+            "name": "Kibana",
+            "value": 5
+          }
+        ]
+      },
+      {
+        "title": "Android technical lead",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "April 2017",
+        "to": "August 2020",
+        "description": [
+          {
+            "text": "Developed an innovative Android application for managing balance sales at points of sale for one of the leading telecommunications companies in Latin America."
+          },
+          {
+            "text": "Redesigned the balance sales process through USSD, creating a specific gateway for the company's antennas.",
+            "bullet": true
+          },
+          {
+            "text": "Implemented CI/CD processes for the continuous distribution of the Android application and Backend service, optimizing delivery and deployment.",
+            "bullet": true
+          },
+          {
+            "text": "Made continuous technical improvements based on SonarQube metrics and functional analysis with the client, ensuring product quality and evolution.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "USSD",
+            "value": 9
+          },
+          {
+            "name": "Jenkins",
+            "value": 9
+          },
+          {
+            "name": "Bash",
+            "value": 8
+          },
+          {
+            "name": "Docker",
+            "value": 6
+          },
+          {
+            "name": "Dagger",
+            "value": 7.5
+          },
+          {
+            "name": "Android architecture",
+            "value": 6
+          },
+          {
+            "name": "SonarQube",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "title": "Sr Android developer",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "April 2017",
+        "to": "April 2016",
+        "description": [
+          {
+            "text": "Developed three Android applications with a common core, following design guidelines for one of the leading private jet companies in the US."
+          },
+          {
+            "text": "Implemented specific controls for the aircraft within the apps, including integration with an onboard server that provides real-time data.",
+            "bullet": true
+          },
+          {
+            "text": "Led the development of one of the three applications, coordinating with other leads to align work across teams and develop shared components.",
+            "bullet": true
+          },
+          {
+            "text": "Designed and developed the dynamic representation of the aircraft in the graphical interface, shared across applications for a cohesive user experience.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Dagger",
+            "value": 5
+          },
+          {
+            "name": "Unit test",
+            "value": 6.5
+          },
+          {
+            "name": "API",
+            "value": 7
+          },
+          {
+            "name": "Android SDK",
+            "value": 7.5
+          },
+          {
+            "name": "Canvas",
+            "value": 8
+          }
+        ]
+      },
+      {
+        "title": "Sr Android developer",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "March 2016",
+        "to": "April 2016",
+        "description": [
+          {
+            "text": "Developed an Android application for one of the leading satellite TV companies in Latin America, aimed at the sales team across 9 countries. The app provides comprehensive information and support for sales representatives throughout the sales process."
+          },
+          {
+            "text": "Designed and implemented the Android application, ensuring an optimized user experience and robust functionality.",
+            "bullet": true
+          },
+          {
+            "text": "Ensured compatibility with multiple versions of Android and various screen sizes, guaranteeing consistent performance across all devices.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "SQLite",
+            "value": 8
+          },
+          {
+            "name": "OAuth 2",
+            "value": 8
+          },
+          {
+            "name": "Google Play Distribution",
+            "value": 7
+          },
+          {
+            "name": "Jenkins",
+            "value": 6
+          },
+          {
+            "name": "i18N",
+            "value": 8
+          },
+          {
+            "name": "Responsive design",
+            "value": 9
+          }
+        ]
+      },
+      {
+        "title": "Ssr Android developer",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "December 2014",
+        "to": "March 2016",
+        "description": [
+          {
+            "text": "Developed proof-of-concept Android applications for the marketing department of one of the largest beverage companies globally."
+          },
+          {
+            "text": "Implemented augmented reality features using chroma key effect to remove green backgrounds from videos in real-time, enhancing visual interaction.",
+            "bullet": true
+          },
+          {
+            "text": "Integrated beacons for contextual interaction within the app, optimizing the user experience based on their environment.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "BLE",
+            "value": 6
+          },
+          {
+            "name": "Augmented Reality",
+            "value": 5
+          },
+          {
+            "name": "OpenGL",
+            "value": 3
+          },
+          {
+            "name": "OpenCV",
+            "value": 3
+          },
+          {
+            "name": "NDK",
+            "value": 3
+          }
+        ]
+      },
+      {
+        "title": "Android technical lead",
+        "type": "job",
+        "company": "Arzion S.R.L.",
+        "from": "October 2013",
+        "to": "November 2013",
+        "description": [
+          {
+            "text": "Developed an application for buying and selling products among friends and acquaintances, facilitating transactions on a user-friendly platform."
+          },
+          {
+            "text": "Collaborated in defining the design and architecture of the solution, ensuring a robust and scalable technical structure.",
+            "bullet": true
+          },
+          {
+            "text": "Established the contract between Frontend and Backend to ensure smooth and efficient integration between different layers of the application.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Bitmap/Canvas",
+            "value": 7
+          },
+          {
+            "name": "Memory leaks",
+            "value": 6
+          },
+          {
+            "name": "Web Sockets",
+            "value": 4
+          },
+          {
+            "name": "Push notifications",
+            "value": 6
+          }
+        ]
+      },
+      {
+        "title": "Android developer",
+        "type": "job",
+        "company": "Arzion S.R.L.",
+        "from": "November 2012",
+        "to": "September 2013",
+        "description": [
+          {
+            "text": "Developed a social network for sharing secrets, which included a real-time chat system using WebSockets, enhancing instantaneous interaction between users."
+          },
+          {
+            "text": "Implemented dynamic image generation with text, allowing for personalization and visual enrichment on the platform.",
+            "bullet": true
+          },
+          {
+            "text": "Defined the messaging flow to ensure accurate and reliable operation, maintaining the integrity of user communication.",
+            "bullet": true
+          },
+          {
+            "text": "Developed a web dashboard for validating and approving uploaded images, facilitating content management and moderation within the application.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "Android SDK",
+            "value": 5
+          },
+          {
+            "name": "Lifecycle",
+            "value": 6
+          },
+          {
+            "name": "JSON",
+            "value": 5
+          },
+          {
+            "name": "Google Play Distribution",
+            "value": 4
+          },
+          {
+            "name": "Bash",
+            "value": 3
+          }
+        ]
+      }
+    ]
+  }
+}
