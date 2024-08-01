@@ -21,6 +21,7 @@ class Footer
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.footer.align}",
             valign: :"#{@theme.components.footer.valign}"
         }
         options[:height]= height_of(text, options)

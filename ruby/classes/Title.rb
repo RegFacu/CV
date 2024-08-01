@@ -19,6 +19,8 @@ class Title
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            style: :"#{@theme.components.title.style}",
+            align: :"#{@theme.components.title.align}",
             valign: :"#{@theme.components.title.valign}"
         }
         options[:height]= height_of(text, options)

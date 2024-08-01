@@ -19,6 +19,7 @@ class Job < Summary
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.job.align}",
             valign: :"#{@theme.components.job.valign}"
         }
         options[:height]= height || height_of(text, options)
@@ -35,6 +36,7 @@ class Job < Summary
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.job.align}",
             valign: :"#{@theme.components.job.valign}"
         }
         options[:height]= height || height_of(text, options)

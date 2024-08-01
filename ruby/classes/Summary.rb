@@ -17,7 +17,7 @@ class Summary
         data.description.each do |object|
             @left_column << Factory.create_class(Factory::TEXT, @document, object, theme, @left_column_width)
         end
-        data.competences.each do |object|
+        data.competences.sort_by(&:value).reverse.each do |object|
             @right_column << Factory.create_class(Factory::COMPETENCE, @document, object, theme, @right_column_width)
         end
     end

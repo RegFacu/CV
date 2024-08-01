@@ -4,6 +4,7 @@
       "header": {
         "height": 150,
         "padding": "xxl",
+        "align": "justify",
         "valign": "center",
         "name_text_size": "xxl",
         "title_text_size": "xl",
@@ -23,6 +24,7 @@
         "padding": "l",
         "start_gradiant_color": "midnight_blue",
         "end_gradiant_color": "blue_gray",
+        "align": "justify",
         "valign": "center",
         "text_size": "xl",
         "color": "white"
@@ -32,11 +34,14 @@
         "padding": "l",
         "start_gradiant_color": "midnight_blue",
         "end_gradiant_color": "blue_gray",
+        "align": "justify",
         "valign": "center",
-        "text_size": "s",
+        "text_size": "xs",
         "color": "white"
       },
       "title": {
+        "style": "bold",
+        "align": "justify",
         "valign": "center",
         "text_size": "xxl",
         "color": "midnight_blue",
@@ -44,32 +49,35 @@
       },
       "summary": {
         "left_column_width": 400,
-        "space_between_columns": "l",
-        "space_between_rows": "m"
+        "space_between_columns": "xxl",
+        "space_between_rows": "s"
       },
       "job": {
+        "align": "justify",
         "valign": "center",
         "title_text_size": "l",
         "title_color": "dark_blue",
         "company_text_size": "m",
         "company_color": "blue_gray",
         "title_spacing": "m",
-        "space_between_texts": "s"
+        "space_between_texts": "m"
       },
       "text": {
+        "align": "justify",
         "valign": "center",
-        "text_size": "s",
+        "text_size": "xs",
         "color": "black",
         "bullet_radius": 3,
         "bullet_spacing": "l",
         "bullet_color": "midnight_blue"
       },
       "competence": {
+        "align": "justify",
         "valign": "center",
-        "text_size": "s",
+        "text_size": "xs",
         "color": "black",
         "spacing": "xs",
-        "line_size": "l",
+        "line_size": "s",
         "background_color": "baby_blue",
         "filled_color": "midnight_blue",
         "cap_style": "round"
@@ -94,10 +102,11 @@
     "spacing": {
       "xs": 2,
       "s": 4,
-      "m": 5,
-      "l": 8,
-      "xl": 10,
-      "xxl": 12
+      "m": 6,
+      "l": 9,
+      "xl": 12,
+      "xxl": 15,
+      "xxxl": 20
     },
     "lines": {
       "xs": 1,
@@ -109,21 +118,21 @@
     },
     "background_color": "white",
     "padding": "xxl",
-    "space_between_components": "s",
-    "default_font": "Times-Roman"
+    "space_between_components": "xxl",
+    "default_font": "palatinolinotype"
   },
   "data": {
     "header": {
       "photo_path": "assets/photo.jpg",
       "full_name": "Facundo Ariel Mengoni",
-      "title": "DevOps Android",
+      "title": "DevOps Mobile",
       "phone": "+54 (221) 6161629",
       "email": "mengonifacundo@gmail.com",
       "country": "Argentina",
       "time_zone": "-3"
     },
     "footer": {
-      "text": "Generado automaticamente por mi usando automatizaciones en https://github.com/RegFacu/CV"
+      "text": "Generado automaticamente en https://github.com/RegFacu/CV"
     },
     "sections": [
       {
@@ -134,10 +143,17 @@
         "type": "summary",
         "description": [
           {
-            "text": "Líder técnico con más de 8 años de experiencia en el desarrollo de aplicaciones android. Me considero un líder natural en quien mis compañeros se apoyan para resolver los problemas y acompañarlos en las soluciones a aplicar."
+            "text": "Líder técnico con más de 8 años de experiencia en el desarrollo y entrega de aplicaciones Android. Me considero un líder natural, destacado por mi capacidad para resolver problemas de manera efectiva y brindar apoyo constante a mi equipo."
           },
           {
-            "text": "He trabajado para grandes clientes con resultados muy positivos y muy buenas referencias. Siempre me encuentro aprendiendo sobre las nuevas tecnologías y librerías que van surgiendo, buscando utilizar las mejores prácticas. Cuento con una gran capacidad de adaptación a las necesidades del proyecto.",
+            "text": "He colaborado con grandes clientes de diversos sectores, obteniendo resultados positivos y referencias destacadas. Me mantengo actualizado con las últimas tecnologías y bibliotecas emergentes, siempre buscando implementar las mejores prácticas."
+          },
+          {
+            "text": "Cuento con una gran capacidad de adaptación a las necesidades del proyecto, demostrando una gran capacidad de análisis y resolución de problemas a corto y largo plazo.",
+            "bullet": true
+          },
+          {
+            "text": "Soy altamente organizado en el seguimiento de tickets y su uso para la planificación del equipo y los lanzamientos. Aprovecho métricas técnicas y de gestión para la toma de decisiones y planificar las tareas de manera eficiente.",
             "bullet": true
           }
         ],
@@ -147,16 +163,12 @@
             "value": 9
           },
           {
-            "name": "Ingles",
-            "value": 7
-          },
-          {
-            "name": "Compañerismo",
-            "value": 10
+            "name": "Inglés",
+            "value": 7.5
           },
           {
             "name": "Calidad",
-            "value": 8
+            "value": 9
           },
           {
             "name": "Capacidad de análisis",
@@ -164,41 +176,57 @@
           },
           {
             "name": "Resolución de problemas",
-            "value": 9.5
+            "value": 10
           },
           {
-            "name": "Reporting/Métricas",
+            "name": "Reportes/Métricas",
             "value": 8.5
           }
         ]
+      },
+      {
+        "type": "spacing",
+        "spacing": "l"
       },
       {
         "type": "title",
         "name": "Experiencia profesional"
       },
       {
-        "title": "DevOps Android Engineer",
+        "title": "DevOps Mobile Engineer",
         "type": "job",
         "company": "Greenlight",
         "from": "Marzo de 2022",
         "to": "Actual",
         "description": [
           {
-            "text": "Definición de varios procesos principalmente relacionados con el desarrollo, testing y release. Desarrollo de la infraestructura para la modularización de la aplicación así como la automatización relacionada a las validaciones de codigo hata la entrega en el PlayStore. Definición de metricas técnicas así como de calidad de la infraestructura como de la aplicación. Observabilidad, incluyendo dashboard y monitores para la visualización y notificación de anomalías en el uso normal de las herramientas."
+            "text": "Responsable de la automatización de la infraestructura y del proceso de lanzamiento de aplicaciones móviles."
+          },
+          {
+            "text": "Definición de procesos principalmente relacionados con el desarrollo, testing y lanzamiento, facilitando herramientas para los desarrolladores y asegurando la calidad del código entregado a través de Firebase y TestFlight y del monitoreo de errores en producción.",
+            "bullet": true
+          },
+          {
+            "text": "Desarrollo de infraestructura para la modularización de la aplicación y automatización de necesidades arquitectónicas, desde la distribución en Artifactory hasta la entrega en PlayStore.",
+            "bullet": true
+          },
+          {
+            "text": "Implementación de observabilidad en Datadog para métricas de infraestructura y uso de la aplicación, con dashboards y monitores para visualización y notificación de anomalías, incluyendo auto-generación de tickets en Jira.",
+            "bullet": true
+          },
+          {
+            "text": "Soporte al equipo de Quality Engineering (QE) desarrollando herramientas y automatizaciones para asegurar la calidad de los entregables, incluyendo validación de tickets, regresiones automáticas, ejecución de tests unitarios/integración y chequeos estáticos de código.",
+            "bullet": true
           }
         ],
         "competences": [
           {
-            "name": "Google Play Distribution",
-            "value": 9
-          },
-          {
             "name": "Bitrise",
-            "value": 9
+            "value": 8.5
           },
           {
             "name": "Datadog",
-            "value": 9
+            "value": 9.5
           },
           {
             "name": "Ruby",
@@ -209,10 +237,6 @@
             "value": 9
           },
           {
-            "name": "Gradle",
-            "value": 8
-          },
-          {
             "name": "GitHub Actions",
             "value": 9.5
           },
@@ -221,74 +245,91 @@
             "value": 8
           },
           {
-            "name": "Checks estáticos",
-            "value": 8
+            "name": "Automation",
+            "value": 10
           }
         ]
       },
       {
-        "title": "Android Engineer",
+        "title": "DevOps Android Engineer",
         "type": "job",
         "company": "Venmo/PayPal",
         "from": "Enero de 2021",
         "to": "Marzo de 2022",
         "description": [
           {
-            "text": "Desarrollo de infra para soporte en el delivery de la aplicación al playstore incluyendo la automatización de los pasos del proceso de desarrollo incluyendo metricas y validaciones para asegurar la calidad."
+            "text": "Responsable de la monitorización y análisis de la estabilidad de los pipelines en Datadog, reportando la ejecución de los tests de regresión diarios."
+          },
+          {
+            "text": "Colaboración en la optimización de pipelines, mejorando la validación del código y reduciendo los tiempos de ejecución de cada fase."
+          },
+          {
+            "text": "Configuración de checks en GitHub para validar pull requests, asegurar la estabilidad de la rama develop y gestionar releases.",
+            "bullet": true
           }
         ],
         "competences": [
           {
-            "name": "Python",
+            "name": "Google Play Distribution",
             "value": 8
           },
           {
-            "name": "Datadog",
+            "name": "Python",
             "value": 7
           },
           {
-            "name": "AWS",
-            "value": 8
+            "name": "Datadog",
+            "value": 8.5
           },
           {
-            "name": "Artifactory",
+            "name": "AWS (S3)",
+            "value": 7
+          },
+          {
+            "name": "Static checks",
             "value": 8
           },
           {
             "name": "GitHub Actions",
-            "value": 9.5
+            "value": 8
           }
         ]
       },
       {
-        "title": "Referente del área mobile",
+        "title": "Project/Engineer Manager",
         "type": "job",
         "company": "Globallogic",
         "from": "Agosto de 2020",
         "to": "Enero de 2021",
         "description": [
           {
-            "text": "Me desempeñé como manager técnico del equipo, no sólo en definiciones relacionadas a Android sino también al proyecto en general."
+            "text": "Lideré el equipo de desarrollo, gestionando las definiciones técnicas y la planificación en colaboración con un importante cliente de telecomunicaciones en América Latina."
           },
           {
-            "text": "Realicé una nueva aplicación basada en una preexistente, aportando ideas para estabilizar el BackEnd y mejorar las funcionalidades, incluyendo un nuevo proceso que reemplazó el core de venta de saldo."
+            "text": "Dirigí la migración de un sistema existente para la gestión de ventas de servicios de internet y telefonía a una arquitectura basada en microservicios.",
+            "bullet": true
           },
           {
-            "text": "Gestioné un equipo de 10 personas (QA, BackEnd, Android, UX)."
+            "text": "Gestioné un equipo multidisciplinario de 10 personas, incluyendo QE, Backend, React, Android y UX.",
+            "bullet": true
+          },
+          {
+            "text": "Definí criterios clave para el análisis de datos en Analytics, optimizando la toma de decisiones basada en datos.",
+            "bullet": true
+          },
+          {
+            "text": "Colaboré en la definición técnica de la aplicación, estableciendo buenas prácticas para la integración entre Backend y Frontend (Android y Web).",
+            "bullet": true
           }
         ],
         "competences": [
           {
-            "name": "Jenkins",
-            "value": 9
+            "name": "Management",
+            "value": 8
           },
           {
             "name": "Logstash",
             "value": 5
-          },
-          {
-            "name": "Unit test",
-            "value": 7
           },
           {
             "name": "Microservices",
@@ -300,7 +341,7 @@
           },
           {
             "name": "Analytics",
-            "value": 6
+            "value": 7
           },
           {
             "name": "Openshift",
@@ -309,18 +350,6 @@
           {
             "name": "Kibana",
             "value": 5
-          },
-          {
-            "name": "Bash",
-            "value": 8
-          },
-          {
-            "name": "Docker",
-            "value": 6
-          },
-          {
-            "name": "Dagger",
-            "value": 7
           }
         ]
       },
@@ -332,7 +361,73 @@
         "to": "Agosto de 2020",
         "description": [
           {
-            "text": "Desarrollo de 3 aplicaciones Android con un core en común según los lineamientos de diseño solicitados. Dichas aplicaciones se comunican con un servidor que se encuentra dentro del avión el cual provee información a la aplicación y permite interactuar como control de las funcionalidades provistas para el confort de los pasajeros.\nLiderazgo de una de las 3 aplicaciones, trabajando en conjunto con otros líderes para coordinar el trabajo de cada célula desarrollando componentes compartidos."
+            "text": "Desarrollé una aplicación Android innovadora para la gestión de ventas de saldo en puntos de venta, para una de las principales empresas de telecomunicaciones en América Latina."
+          },
+          {
+            "text": "Rediseñé el proceso de venta de saldo mediante USSD, creando un gateway específico para las antenas de la empresa.",
+            "bullet": true
+          },
+          {
+            "text": "Implementé procesos de CI/CD para la distribución continua de la aplicación Android y el servicio Backend, optimizando la entrega y despliegue.",
+            "bullet": true
+          },
+          {
+            "text": "Realicé mejoras técnicas continuas basadas en métricas de SonarQube y en el análisis funcional con el cliente, asegurando la calidad y evolución del producto.",
+            "bullet": true
+          }
+        ],
+        "competences": [
+          {
+            "name": "USSD",
+            "value": 9
+          },
+          {
+            "name": "Jenkins",
+            "value": 9
+          },
+          {
+            "name": "Bash",
+            "value": 8
+          },
+          {
+            "name": "Docker",
+            "value": 6
+          },
+          {
+            "name": "Dagger",
+            "value": 7.5
+          },
+          {
+            "name": "Android architecture",
+            "value": 6
+          },
+          {
+            "name": "SonarQube",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "title": "Desarrollador Android Sr",
+        "type": "job",
+        "company": "Globallogic",
+        "from": "Abril de 2017",
+        "to": "Abril de 2016",
+        "description": [
+          {
+            "text": "Desarrollé tres aplicaciones Android con un núcleo común, siguiendo las directrices de diseño para una de las principales empresas de vuelos privados en EE.UU."
+          },
+          {
+            "text": "Implementé controles específicos para la aeronave en las aplicaciones, incluyendo la integración con un servidor a bordo que proporciona datos en tiempo real.",
+            "bullet": true
+          },
+          {
+            "text": "Lideré el desarrollo de una de las tres aplicaciones, coordinando con otros líderes para alinear el trabajo entre equipos y desarrollar componentes compartidos.",
+            "bullet": true
+          },
+          {
+            "text": "Diseñé y desarrollé la representación dinámica de la aeronave en la interfaz gráfica, compartida entre las aplicaciones para una experiencia cohesiva.",
+            "bullet": true
           }
         ],
         "competences": [
@@ -341,20 +436,20 @@
             "value": 5
           },
           {
-            "name": "Arquitectura",
-            "value": 6
+            "name": "Unit test",
+            "value": 6.5
           },
           {
-            "name": "GRPC",
-            "value": 5
+            "name": "API",
+            "value": 7
           },
           {
-            "name": "Sonar",
-            "value": 5
+            "name": "Android SDK",
+            "value": 7.5
           },
           {
-            "name": "Lint",
-            "value": 5
+            "name": "Canvas",
+            "value": 8
           }
         ]
       },
@@ -362,11 +457,19 @@
         "title": "Desarrollador Android Senior",
         "type": "job",
         "company": "Globallogic",
-        "from": "Abril de 2016",
-        "to": "Abril de 2017",
+        "from": "Marzo de 2016",
+        "to": "Abril de 2016",
         "description": [
           {
-            "text": "Desarrollo de una aplicación Android utilizada para el equipo de ventas de 9 países diferentes, la cual provee información y soporte a los vendedores para realizar las ventas.\nDiseño e implementación de la aplicación android.\n"
+            "text": "Desarrollé una aplicación Android para una de las principales compañías de televisión satelital en Latinoamérica, destinada al equipo de ventas en 9 países. La aplicación proporciona información y soporte integral para los vendedores en el proceso de ventas."
+          },
+          {
+            "text": "Diseñé e implementé la aplicación Android, asegurando una experiencia de usuario optimizada y funcionalidades robustas.",
+            "bullet": true
+          },
+          {
+            "text": "Aseguré la compatibilidad con múltiples versiones de Android y diversos tamaños de pantalla, garantizando un rendimiento consistente en todos los dispositivos.",
+            "bullet": true
           }
         ],
         "competences": [
@@ -389,6 +492,10 @@
           {
             "name": "i18N",
             "value": 8
+          },
+          {
+            "name": "Responsive design",
+            "value": 9
           }
         ]
       },
@@ -397,10 +504,18 @@
         "type": "job",
         "company": "Globallogic",
         "from": "Diciembre de 2014",
-        "to": "Abril de 2016",
+        "to": "Marzo de 2016",
         "description": [
           {
-            "text": "Desarrollo de pruebas de concepto en android para el área de marketing utilizando el efecto chroma key, quitando el fondo verde de los videos en tiempo real e incluyendo animaciones en realidad aumentada."
+            "text": "Desarrollé pruebas de concepto en Android para el departamento de marketing de una de las mayores compañías de bebidas a nivel global."
+          },
+          {
+            "text": "Implementé funcionalidades de realidad aumentada utilizando el efecto chroma key para eliminar el fondo verde en videos en tiempo real.",
+            "bullet": true
+          },
+          {
+            "text": "Integré beacons para la interacción contextual de la aplicación, optimizando la experiencia del usuario en función de su entorno.",
+            "bullet": true
           }
         ],
         "competences": [
@@ -434,7 +549,15 @@
         "to": "Noviembre de 2013",
         "description": [
           {
-            "text": "Desarrollo de una aplicación para vender productos entre amigos y conocidos. Colaboración en la definición del diseño y de la arquitectura de la solución."
+            "text": "Desarrollé una aplicación para la compra y venta de productos entre amigos y conocidos, facilitando transacciones entre usuarios en una plataforma amigable."
+          },
+          {
+            "text": "Colaboré en la definición del diseño y la arquitectura de la solución, asegurando una estructura técnica sólida y escalable.",
+            "bullet": true
+          },
+          {
+            "text": "Establecí el contrato entre Frontend y Backend para asegurar una integración fluida y eficiente entre las distintas capas de la aplicación.",
+            "bullet": true
           }
         ],
         "competences": [
@@ -464,7 +587,19 @@
         "to": "Septiembre de 2013",
         "description": [
           {
-            "text": "Desarrollo de red social para compartir secretos con la gente que incluía un chat en tiempo real a través de WebSockets."
+            "text": "Desarrollé una red social para compartir secretos, que incluía un sistema de chat en tiempo real mediante WebSockets, mejorando la interacción instantánea entre usuarios."
+          },
+          {
+            "text": "Implementé la generación dinámica de imágenes con texto, permitiendo personalización y enriquecimiento visual en la plataforma.",
+            "bullet": true
+          },
+          {
+            "text": "Definí el flujo de mensajería para garantizar un funcionamiento preciso y fiable, asegurando la integridad de la comunicación entre usuarios.",
+            "bullet": true
+          },
+          {
+            "text": "Desarrollé un dashboard web para la validación y aprobación de imágenes subidas, facilitando la gestión y moderación del contenido visual en la aplicación.",
+            "bullet": true
           }
         ],
         "competences": [

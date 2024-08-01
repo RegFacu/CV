@@ -22,6 +22,7 @@ class Competence
             at: [horizontal_cursor, cursor],
             width: @available_width,
             size: font_size,
+            align: :"#{@theme.components.competence.align}",
             valign: :"#{@theme.components.competence.valign}"
         }
         options[:height]= height_of(text, options)
