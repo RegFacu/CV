@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   generate-cv-by-ruby:
-    name: CV (Ruby)
+    name: CV (Ruby) in ${{ matrix.language }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
