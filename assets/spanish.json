@@ -36,7 +36,7 @@
         "end_gradiant_color": "blue_gray",
         "align": "justify",
         "valign": "center",
-        "text_size": "s",
+        "text_size": "xs",
         "color": "white"
       },
       "title": {
@@ -125,7 +125,7 @@
     "header": {
       "photo_path": "assets/photo.jpg",
       "full_name": "Facundo Ariel Mengoni",
-      "title": "DevOps Android",
+      "title": "DevOps Mobile",
       "phone": "+54 (221) 6161629",
       "email": "mengonifacundo@gmail.com",
       "country": "Argentina",
@@ -143,17 +143,17 @@
         "type": "summary",
         "description": [
           {
-            "text": "Líder técnico con más de 8 años de experiencia en el desarrollo y delivery de aplicaciones android. Me considero un líder natural, alguien en quien mis compañeros se pueden apoyar para resolver los problemas y acompañarlos en las soluciones a aplicar."
+            "text": "Líder técnico con más de 8 años de experiencia en el desarrollo y entrega de aplicaciones Android. Me considero un líder natural, destacado por mi capacidad para resolver problemas de manera efectiva y brindar apoyo constante a mi equipo."
           },
           {
-            "text": "He trabajado para grandes clientes de diferentes tipos de negocios con resultados muy positivos y muy buenas referencias. Siempre estoy aprendiendo sobre nuevas tecnologías y bibliotecas que están surgiendo, buscando utilizar las mejores prácticas."
+            "text": "He colaborado con grandes clientes de diversos sectores, obteniendo resultados positivos y referencias destacadas. Me mantengo actualizado con las últimas tecnologías y bibliotecas emergentes, siempre buscando implementar las mejores prácticas."
           },
           {
-            "text": "Cuento con una gran capacidad de adaptación a las necesidades del proyecto. Considero que poseo una gran capacidad de análisis y resolución de problemas a corto y largo plazo.",
+            "text": "Cuento con una gran capacidad de adaptación a las necesidades del proyecto, demostrando una gran capacidad de análisis y resolución de problemas a corto y largo plazo.",
             "bullet": true
           },
           {
-            "text": "Soy muy organizado respecto al seguimiento de tickets y su utilización para la planificación no sólo del equipo sino también de los releases. Utilizo mucho las métricas técnicas y de gestion para la toma de decisiones y planificación de las tareas.",
+            "text": "Soy altamente organizado en el seguimiento de tickets y su uso para la planificación del equipo y los lanzamientos. Aprovecho métricas técnicas y de gestión para la toma de decisiones y planificar las tareas de manera eficiente.",
             "bullet": true
           }
         ],
@@ -179,7 +179,7 @@
             "value": 10
           },
           {
-            "name": "Reporting/Métricas",
+            "name": "Reportes/Métricas",
             "value": 8.5
           }
         ]
@@ -200,22 +200,22 @@
         "to": "Actual",
         "description": [
           {
-            "text": "Responsable de la automatización de la infraestructura y del proceso de release de las aplicaciones mobile."
+            "text": "Responsable de la automatización de la infraestructura y del proceso de lanzamiento de aplicaciones móviles."
           },
           {
-            "text": "Definición de procesos principalmente relacionados con el desarrollo, testing y release, facilitando las herramientas para los desarrolladores así como asegurando la calidad del código entregado (incluyendo distribución a traves de Firebase y TestFlight y monitoreo de crashes en producción).",
+            "text": "Definición de procesos principalmente relacionados con el desarrollo, testing y lanzamiento, facilitando herramientas para los desarrolladores y asegurando la calidad del código entregado a través de Firebase y TestFlight y del monitoreo de errores en producción.",
             "bullet": true
           },
           {
-            "text": "Desarrollo de la infraestructura para la modularización de la aplicación así como la automatización relacionada a las necesidades de la nueva arquitectura para incluyendo la distribución en Artifactory hasta la entrega en el PlayStore.",
+            "text": "Desarrollo de infraestructura para la modularización de la aplicación y automatización de necesidades arquitectónicas, desde la distribución en Artifactory hasta la entrega en PlayStore.",
             "bullet": true
           },
           {
-            "text": "Observabilidad en Datadog tanto de las métricas de la infraestructura como del uso de la aplicación, incluyendo dashboards y monitores para la visualización y notificación de anomalías a traves de la auto-generación de tickets en Jira.",
+            "text": "Implementación de observabilidad en Datadog para métricas de infraestructura y uso de la aplicación, con dashboards y monitores para visualización y notificación de anomalías, incluyendo auto-generación de tickets en Jira.",
             "bullet": true
           },
           {
-            "text": "Soporte al equipo de QE para el desarrollo de herramientas/automatizaciones para asegurar la calidad de los entregables, no solo a nivel de validacion de tickets sino de regressiones automaticas, ejecución de tests unitarios/integración y chequeos estáticos de código",
+            "text": "Soporte al equipo de Quality Engineering (QE) desarrollando herramientas y automatizaciones para asegurar la calidad de los entregables, incluyendo validación de tickets, regresiones automáticas, ejecución de tests unitarios/integración y chequeos estáticos de código.",
             "bullet": true
           }
         ],
@@ -258,13 +258,13 @@
         "to": "Marzo de 2022",
         "description": [
           {
-            "text": "Responsable de la observabilidad de los pipelines en Datadog para determinar la estabilidad de los mismos así como para reportar la ejecución de los test de regression diarios."
+            "text": "Responsable de la monitorización y análisis de la estabilidad de los pipelines en Datadog, reportando la ejecución de los tests de regresión diarios."
           },
           {
-            "text": "Colaboración en la mejora de los pipelines para la validación de código y mejoras en los tiempos de ejecución de cada parte de los pipelines."
+            "text": "Colaboración en la optimización de pipelines, mejorando la validación del código y reduciendo los tiempos de ejecución de cada fase."
           },
           {
-            "text": "Configuración de distintos checks en GitHub para validar los pull requests, estabilidad de la rama develop y releases.",
+            "text": "Configuración de checks en GitHub para validar pull requests, asegurar la estabilidad de la rama develop y gestionar releases.",
             "bullet": true
           }
         ],
@@ -286,7 +286,7 @@
             "value": 7
           },
           {
-            "name": "Checks estáticos",
+            "name": "Static checks",
             "value": 8
           },
           {
@@ -303,28 +303,28 @@
         "to": "Enero de 2021",
         "description": [
           {
-            "text": "Me desempeñé como manager del equipo, gestionando definiciones técnicas como la planificaciones con el cliente (una de las principales empresas de telecomunicaciones de latin américa)."
+            "text": "Lideré el equipo de desarrollo, gestionando las definiciones técnicas y la planificación en colaboración con un importante cliente de telecomunicaciones en América Latina."
           },
           {
-            "text": "Migración de un sistema preexistente para la gestión de ventas de servicios de internet y telefonía a microservicios.",
+            "text": "Dirigí la migración de un sistema existente para la gestión de ventas de servicios de internet y telefonía a una arquitectura basada en microservicios.",
             "bullet": true
           },
           {
-            "text": "Gestión de un equipo de 10 personas (QA, Backend, React, Android, UX).",
+            "text": "Gestioné un equipo multidisciplinario de 10 personas, incluyendo QE, Backend, React, Android y UX.",
             "bullet": true
           },
           {
-            "text": "Definición de puntos claves para el análisis posterior de datos en Analytics.",
+            "text": "Definí criterios clave para el análisis de datos en Analytics, optimizando la toma de decisiones basada en datos.",
             "bullet": true
           },
           {
-            "text": "Colaboración en cuestiones técnicas para las definiciones de la aplicación, incluyendo buenas prácticas para la interacción entre Backend y Frontend (Android y Web).",
+            "text": "Colaboré en la definición técnica de la aplicación, estableciendo buenas prácticas para la integración entre Backend y Frontend (Android y Web).",
             "bullet": true
           }
         ],
         "competences": [
           {
-            "name": "Gestión",
+            "name": "Management",
             "value": 8
           },
           {
@@ -361,18 +361,18 @@
         "to": "Agosto de 2020",
         "description": [
           {
-            "text": "Desarrollo de una nueva aplicación Android para la gestión de venta de saldo en puntos de venta para una de las principales empresas de telecomunicaciones de latin américa."
+            "text": "Desarrollé una aplicación Android innovadora para la gestión de ventas de saldo en puntos de venta, para una de las principales empresas de telecomunicaciones en América Latina."
           },
           {
-            "text": "Rediseño del proceso de venta de saldo a traves de USSD, incluyendo la generación de un gateway para las antenas de la empresa.",
+            "text": "Rediseñé el proceso de venta de saldo mediante USSD, creando un gateway específico para las antenas de la empresa.",
             "bullet": true
           },
           {
-            "text": "Implementación de CI/CD para la distribución de la aplicación Android y el servicio Backend.",
+            "text": "Implementé procesos de CI/CD para la distribución continua de la aplicación Android y el servicio Backend, optimizando la entrega y despliegue.",
             "bullet": true
           },
           {
-            "text": "Mejoras técnicas progresivas basadas en métricas de SonarQube y mejoras funcionales analizadas con el cliente.",
+            "text": "Realicé mejoras técnicas continuas basadas en métricas de SonarQube y en el análisis funcional con el cliente, asegurando la calidad y evolución del producto.",
             "bullet": true
           }
         ],
@@ -398,7 +398,7 @@
             "value": 7.5
           },
           {
-            "name": "Arquitectura Android",
+            "name": "Android architecture",
             "value": 6
           },
           {
@@ -415,18 +415,18 @@
         "to": "Abril de 2016",
         "description": [
           {
-            "text": "Desarrollo de 3 aplicaciones Android con un core en común según los lineamientos de diseño solicitados para una de las empresas de vuelos privados más grandes e importantes de EEUU."
+            "text": "Desarrollé tres aplicaciones Android con un núcleo común, siguiendo las directrices de diseño para una de las principales empresas de vuelos privados en EE.UU."
           },
           {
-            "text": "Implementación de los controles del avión para las distintas aplicaciones incluyendo la comunicación con un servidor dentro del avión el cual provee información.",
+            "text": "Implementé controles específicos para la aeronave en las aplicaciones, incluyendo la integración con un servidor a bordo que proporciona datos en tiempo real.",
             "bullet": true
           },
           {
-            "text": "Liderazgo de una de las 3 aplicaciones, trabajando en conjunto con otros líderes para coordinar el trabajo de cada célula desarrollando componentes compartidos.",
+            "text": "Lideré el desarrollo de una de las tres aplicaciones, coordinando con otros líderes para alinear el trabajo entre equipos y desarrollar componentes compartidos.",
             "bullet": true
           },
           {
-            "text": "Generación dinámica del avión en la interfaz gráfica dentro del core, compartida entre las aplicaciones.",
+            "text": "Diseñé y desarrollé la representación dinámica de la aeronave en la interfaz gráfica, compartida entre las aplicaciones para una experiencia cohesiva.",
             "bullet": true
           }
         ],
@@ -461,14 +461,14 @@
         "to": "Abril de 2016",
         "description": [
           {
-            "text": "Desarrollo de una aplicación Android para una de las compañias operadora de televisión satelital más grande de latinoamérica utilizada para el equipo de ventas de 9 países diferentes, la cual provee información y soporte a los vendedores para realizar las ventas."
+            "text": "Desarrollé una aplicación Android para una de las principales compañías de televisión satelital en Latinoamérica, destinada al equipo de ventas en 9 países. La aplicación proporciona información y soporte integral para los vendedores en el proceso de ventas."
           },
           {
-            "text": "Diseño e implementación de la aplicación android.",
+            "text": "Diseñé e implementé la aplicación Android, asegurando una experiencia de usuario optimizada y funcionalidades robustas.",
             "bullet": true
           },
           {
-            "text": "Compatiblidad con multiples versines de android y diferentes tamaños de pantalla.",
+            "text": "Aseguré la compatibilidad con múltiples versiones de Android y diversos tamaños de pantalla, garantizando un rendimiento consistente en todos los dispositivos.",
             "bullet": true
           }
         ],
@@ -507,14 +507,14 @@
         "to": "Marzo de 2016",
         "description": [
           {
-            "text": "Desarrollo de pruebas de concepto en android para el área de marketing de una de las compañías de gaseosas más grandes del mundo."
+            "text": "Desarrollé pruebas de concepto en Android para el departamento de marketing de una de las mayores compañías de bebidas a nivel global."
           },
           {
-            "text": "Realidad aumentada utilizando el efecto chroma key, quitando el fondo verde de los videos en tiempo real.",
+            "text": "Implementé funcionalidades de realidad aumentada utilizando el efecto chroma key para eliminar el fondo verde en videos en tiempo real.",
             "bullet": true
           },
           {
-            "text": "Utilización de beacons para la interacción de la aplicación con el contexto.",
+            "text": "Integré beacons para la interacción contextual de la aplicación, optimizando la experiencia del usuario en función de su entorno.",
             "bullet": true
           }
         ],
@@ -549,14 +549,14 @@
         "to": "Noviembre de 2013",
         "description": [
           {
-            "text": "Desarrollo de una aplicación para vender productos entre amigos y conocidos."
+            "text": "Desarrollé una aplicación para la compra y venta de productos entre amigos y conocidos, facilitando transacciones entre usuarios en una plataforma amigable."
           },
           {
-            "text": "Colaboración en la definición del diseño y de la arquitectura de la solución.",
+            "text": "Colaboré en la definición del diseño y la arquitectura de la solución, asegurando una estructura técnica sólida y escalable.",
             "bullet": true
           },
           {
-            "text": "Definición del contrato entre Frontend y Backend.",
+            "text": "Establecí el contrato entre Frontend y Backend para asegurar una integración fluida y eficiente entre las distintas capas de la aplicación.",
             "bullet": true
           }
         ],
@@ -587,18 +587,18 @@
         "to": "Septiembre de 2013",
         "description": [
           {
-            "text": "Desarrollo de red social para compartir secretos con la gente. Incluía un chat en tiempo real a través de WebSockets."
+            "text": "Desarrollé una red social para compartir secretos, que incluía un sistema de chat en tiempo real mediante WebSockets, mejorando la interacción instantánea entre usuarios."
           },
           {
-            "text": "Generación dinámica de imágenes incluyendo texto.",
+            "text": "Implementé la generación dinámica de imágenes con texto, permitiendo personalización y enriquecimiento visual en la plataforma.",
             "bullet": true
           },
           {
-            "text": "Definición del flujo para asegurar el correcto funcionamiento de la mensajería.",
+            "text": "Definí el flujo de mensajería para garantizar un funcionamiento preciso y fiable, asegurando la integridad de la comunicación entre usuarios.",
             "bullet": true
           },
           {
-            "text": "Desarrollo de un dashboard web para la validación/aprobación de las imágenes subidas.",
+            "text": "Desarrollé un dashboard web para la validación y aprobación de imágenes subidas, facilitando la gestión y moderación del contenido visual en la aplicación.",
             "bullet": true
           }
         ],
