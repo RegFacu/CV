@@ -20,7 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: [spanish, english]
+        include:
+          - file: spanish
+            language: Spanish
+          - file: english
+            language: English
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,15 +35,17 @@ jobs:
           bundler-cache: true
 
       - name: Generate ${{ matrix.language }} CV
-        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.language }}.json
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.file }}.json
 
       - name: Show summary information
-        run: echo "::notice title=CV::${{ matrix.language }} CV Generated"
+        run: |
+          echo "::notice title=${{ matrix.language }} CV::CV Generated"
+          echo "${{ matrix.language }} CV Generated" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.language }} CV
-          path: exported/cv_${{ matrix.language }}.pdf
+          path: exported/cv_${{ matrix.file }}.pdf
           if-no-files-found: 'error'
           retention-days: 5
