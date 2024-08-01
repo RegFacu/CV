@@ -15,9 +15,9 @@
         "title_color": "white",
         "contact_color": "white",
         "icon_color": "white",
-        "cell_phone_icon": "assets/cell-phone.svg",
-        "email_icon": "assets/email.svg",
-        "location_icon": "assets/location.svg"
+        "cell_phone_icon": "assets/icon/cell-phone.svg",
+        "email_icon": "assets/icon/email.svg",
+        "location_icon": "assets/icon/location.svg"
       },
       "alternative_header": {
         "height": 50,
