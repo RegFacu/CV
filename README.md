@@ -3,16 +3,11 @@ This is a different way to share my CV. It is not only generating the PDF dynami
 
 You will be able to see my technical skill reading the code, automations and documentations as well as my management skills in terms of ticket tracking, milestone definitions and metrics (limited to what I can do with GitHub).
 
-<object data="cv/ruby/cv_english.pdf" type="application/pdf" width="700px" height="990px">
-    <embed src="cv/ruby/cv_english.pdf ">
-        <p>This browser does not support PDFs. Please download the PDF to view it:
-            <ul>
-                <li><a href="cv/ruby/cv_english.pdf">English PDF</a>.</li>
-                <li><a href="cv/ruby/cv_spanish.pdf">Spanish PDF</a>.</li>
-            </ul>
-        </p>
-    </embed>
-</object>
+<p>Please download the PDF to view it:</p>
+    <ul>
+        <li><a href="cv/ruby/cv_english.pdf">English CV.pdf</a></li>
+        <li><a href="cv/ruby/cv_spanish.pdf">Spanish CV.pdf</a></li>
+    </ul>
 
 ## Built With
 
