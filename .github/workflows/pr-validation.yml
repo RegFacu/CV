@@ -16,8 +16,15 @@ concurrency:
 
 jobs:
   generate-cv-by-ruby:
-    name: CV (Ruby)
+    name: CV (Ruby) in ${{ matrix.language }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - file: spanish
+            language: Spanish
+          - file: english
+            language: English
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,18 +34,18 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Generate CV
-        env:
-          RUBYLIB: $GITHUB_WORKSPACE/ruby/modules:$GITHUB_WORKSPACE/ruby/classes
-        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/spanish.json
+      - name: Generate ${{ matrix.language }} CV
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.file }}.json
 
       - name: Show summary information
-        run: echo "::notice title=CV::CV Generated"
+        run: |
+          echo "::notice title=${{ matrix.language }} CV::CV Generated"
+          echo "${{ matrix.language }} CV Generated" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: CV
-          path: exported/cv_spanish.pdf
+          name: ${{ matrix.language }} CV
+          path: exported/cv_${{ matrix.file }}.pdf
           if-no-files-found: 'error'
           retention-days: 5

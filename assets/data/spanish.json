@@ -15,9 +15,9 @@
         "title_color": "white",
         "contact_color": "white",
         "icon_color": "white",
-        "cell_phone_icon": "assets/cell-phone.svg",
-        "email_icon": "assets/email.svg",
-        "location_icon": "assets/location.svg"
+        "cell_phone_icon": "assets/icon/cell-phone.svg",
+        "email_icon": "assets/icon/email.svg",
+        "location_icon": "assets/icon/location.svg"
       },
       "alternative_header": {
         "height": 50,
@@ -125,7 +125,7 @@
     "header": {
       "photo_path": "assets/photo.jpg",
       "full_name": "Facundo Ariel Mengoni",
-      "title": "DevOps Mobile",
+      "title": "Sr DevOps Mobile",
       "phone": "+54 (221) 6161629",
       "email": "mengonifacundo@gmail.com",
       "country": "Argentina",
