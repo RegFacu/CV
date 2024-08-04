@@ -4,10 +4,6 @@ on:
   pull_request:
     branches:
       - develop
-    paths:
-      - 'assets/**'
-      - 'ruby/**'
-      - '!ruby/env_setup/**'
     types:
       - synchronize
       - opened
@@ -19,8 +15,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  changes:
+    # This approach ensures the workflow is executed and skip the checks in cases they are not needed.
+    name: Check changes
+    runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.changes.outputs.src }}
+    steps:
+      - name: Analyze changed files
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            src:
+              - 'assets/**'
+              - 'ruby/**'
+              - '!ruby/env_setup/**'
+
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
+    needs: changes
+    if: needs.changes.outputs.has_changes == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
