@@ -30,7 +30,6 @@ jobs:
             src:
               - 'assets/**'
               - 'ruby/**'
-              - '!ruby/env_setup/**'
 
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
