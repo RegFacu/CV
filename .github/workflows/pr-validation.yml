@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - develop
+    paths:
+      - 'assets/**'
+      - 'ruby/**'
+      - '!ruby/env_setup/**'
     types:
       - synchronize
       - opened
