@@ -7,13 +7,13 @@ require 'Factory'
 class CV
     include Prawn::View
 
-    def initialize(json)
-        @json = json
-        @theme = json.theme
+    def initialize(data)
+        @data = data
+        @theme = data.theme
         @space_between_components = @theme.spacing[@theme.space_between_components]
         @padding = @theme.spacing[@theme.padding]
         draw_background_color()
-        set_font(json.theme.default_font)
+        set_font(data.theme.default_font)
     end
 
     def document
@@ -32,20 +32,20 @@ class CV
     end
 
     def draw_background_color()
-        fill_color @json.theme.colors[@json.theme.background_color]
+        fill_color @data.theme.colors[@data.theme.background_color]
         fill_rectangle [0, bounds.height], bounds.width, bounds.height
     end
 
     def write_content()
         available_width = bounds.width # Full available width for header
-        Factory.create_class(Factory::HEADER, @document, @json.data.header, @json.theme, available_width).write_content(0)
-        alternative_header = Factory.create_class(Factory::ALTERNATIVE_HEADER, @document, @json.data.header, @json.theme, available_width)
-        footer = Factory.create_class(Factory::FOOTER, @document, @json.data, @json.theme, available_width)
+        Factory.create_class(Factory::HEADER, @document, @data.data.header, @data.theme, available_width).write_content(0)
+        alternative_header = Factory.create_class(Factory::ALTERNATIVE_HEADER, @document, @data.data.header, @data.theme, available_width)
+        footer = Factory.create_class(Factory::FOOTER, @document, @data.data, @data.theme, available_width)
 
         available_width = bounds.width - @padding * 2 # Left and right padding for content
         move_down(@padding) # Top padding
-        @json.data.sections.each do |section|
-            clazz = Factory.create_class(section.type, document, section, @json.theme, available_width)
+        @data.data.sections.each do |section|
+            clazz = Factory.create_class(section.type, document, section, @data.theme, available_width)
             horizontal_cursor = @padding
             remaining_space = cursor - @padding - footer.measure_height(0) # Bottom padding & footer
             if ! clazz.fit(horizontal_cursor, remaining_space)
