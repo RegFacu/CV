@@ -46,6 +46,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.language }} CV
-          path: exported/cv_${{ matrix.file }}.pdf
+          path: exported/*.pdf
           if-no-files-found: 'error'
           retention-days: 5
