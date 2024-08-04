@@ -21,9 +21,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - file: spanish
+          - file: spanish.json
             language: Spanish
-          - file: english
+          - file: english.yml
             language: English
     steps:
       - name: Checkout
@@ -35,7 +35,7 @@ jobs:
           bundler-cache: true
 
       - name: Generate ${{ matrix.language }} CV
-        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.file }}.json
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.file }}
 
       - name: Show summary information
         run: |
@@ -46,6 +46,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.language }} CV
-          path: exported/cv_${{ matrix.file }}.pdf
+          path: exported/*.pdf
           if-no-files-found: 'error'
           retention-days: 5

@@ -6,14 +6,18 @@ end
 require 'json'
 require 'optparse'
 require 'ostruct'
+require 'yaml'
 
 require 'CV'
 
 def main(path, export_dir_path)
-    json = JSON.parse(File.read(path), object_class: OpenStruct)
-    cv = CV.new(json)
+    file_ext = File.extname(path)
+    content = File.read(path) if file_ext == ".json"
+    content = YAML.load_file(path).to_json if file_ext == ".yml"
+    object = JSON.parse(content, object_class: OpenStruct)
+    cv = CV.new(object)
     cv.write_content()
-    cv.export(export_dir_path, File.basename(path, '.json'))
+    cv.export(export_dir_path, File.basename(path, file_ext))
 end
 
 if __FILE__ == $0
