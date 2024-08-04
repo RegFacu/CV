@@ -39,7 +39,7 @@ jobs:
     name: CV (Ruby) in English
     needs: changes
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
-    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@${{ github.head_ref }}
+    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
     with:
       file_full_path: assets/data/english.yml
       language: English
@@ -48,7 +48,7 @@ jobs:
     name: CV (Ruby) in Spanish
     needs: changes
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
-    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@${{ github.head_ref }}
+    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
     with:
       file_full_path: assets/data/spanish.json
       language: Spanish
