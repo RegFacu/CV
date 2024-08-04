@@ -20,21 +20,25 @@ jobs:
     name: Check changes
     runs-on: ubuntu-latest
     outputs:
-      has_changes: ${{ steps.changes.outputs.src }}
+      assets: ${{ steps.changes.outputs.assets }}
+      ruby: ${{ steps.changes.outputs.ruby }}
     steps:
       - name: Analyze changed files
         id: changes
         uses: dorny/paths-filter@v3
         with:
+          predicate-quantifier: 'every'
           filters: |
-            src:
+            assets:
               - 'assets/**'
+            ruby:
               - 'ruby/**'
+              - '!ruby/env_setup/**'
 
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
     needs: changes
-    if: needs.changes.outputs.has_changes == 'true'
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     runs-on: ubuntu-latest
     strategy:
       matrix:
