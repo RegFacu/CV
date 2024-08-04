@@ -26,6 +26,7 @@ jobs:
         id: lint_pr_title
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
           requireScope: true
           scopes: |
             CV-\d+
