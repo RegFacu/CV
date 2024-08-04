@@ -1,0 +1,39 @@
+name: Generate CV by Ruby
+on:
+  workflow_call:
+    inputs:
+      file_full_path:
+        required: true
+        type: string
+      language:
+        required: true
+        type: string
+
+jobs:
+  generate-cv-by-ruby:
+    name: CV (Ruby) in ${{ inputs.language }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Generate ${{ inputs.language }} CV
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=${{ inputs.file_full_path }}
+
+      - name: Show summary information
+        run: |
+          echo "::notice title=${{ inputs.language }} CV::CV Generated"
+          echo "${{ inputs.language }} CV Generated" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.language }} CV
+          path: exported/*.pdf
+          if-no-files-found: 'error'
+          retention-days: 5

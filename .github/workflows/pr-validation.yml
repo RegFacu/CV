@@ -15,37 +15,40 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-cv-by-ruby:
-    name: CV (Ruby) in ${{ matrix.language }}
+  changes:
+    # This approach ensures the workflow is executed and skip the checks in cases they are not needed.
+    name: Check changes
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - file: spanish.json
-            language: Spanish
-          - file: english.yml
-            language: English
+    outputs:
+      assets: ${{ steps.changes.outputs.assets }}
+      ruby: ${{ steps.changes.outputs.ruby }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Configure ruby
-        uses: ruby/setup-ruby@v1
+      - name: Analyze changed files
+        id: changes
+        uses: dorny/paths-filter@v3
         with:
-          bundler-cache: true
+          predicate-quantifier: 'every'
+          filters: |
+            assets:
+              - 'assets/**'
+            ruby:
+              - 'ruby/**'
+              - '!ruby/env_setup/**'
 
-      - name: Generate ${{ matrix.language }} CV
-        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=assets/data/${{ matrix.file }}
+  generate-cv-by-ruby-english:
+    name: CV (Ruby) in English
+    needs: changes
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
+    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
+    with:
+      file_full_path: assets/data/english.yml
+      language: English
 
-      - name: Show summary information
-        run: |
-          echo "::notice title=${{ matrix.language }} CV::CV Generated"
-          echo "${{ matrix.language }} CV Generated" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.language }} CV
-          path: exported/*.pdf
-          if-no-files-found: 'error'
-          retention-days: 5
+  generate-cv-by-ruby-spanish:
+    name: CV (Ruby) in Spanish
+    needs: changes
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
+    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
+    with:
+      file_full_path: assets/data/spanish.json
+      language: Spanish
