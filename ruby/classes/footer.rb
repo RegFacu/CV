@@ -34,21 +34,25 @@ class Footer
     box
   end
 
-  def measure_height(horizontal_cursor)
+  def measure_height(_horizontal_cursor)
     @height
   end
 
   def write_content(_horizontal_cursor)
+    draw_background
+
+    move_down @padding
+    fill_color @theme.colors[@theme.components.footer.color]
+    box = full_name_box(@padding)
+    box.render
+  end
+
+  def draw_background
     stops = {
       0 => @theme.colors[@theme.components.footer.start_gradiant_color],
       1 => @theme.colors[@theme.components.footer.end_gradiant_color]
     }
     fill_gradient(from: [0, cursor], to: [@available_width, cursor - @height], stops:)
     fill_rectangle [0, cursor], @available_width, @height
-
-    move_down @padding
-    fill_color @theme.colors[@theme.components.footer.color]
-    box = full_name_box(@padding)
-    box.render
   end
 end
