@@ -62,24 +62,41 @@ jobs:
           filter_mode: nofilter
           only_changed: true
 
-  generate-cv-by-ruby-english:
-    name: CV (Ruby) in English
+  generate-cv-by-ruby:
+    name: CV (Ruby) in ${{ matrix.language }}
     needs:
       - changes
       - static-checks
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
-    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
-    with:
-      file_full_path: assets/data/english.yml
-      language: English
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - file: assets/data/spanish.json
+            language: Spanish
+          - file: assets/data/english.yml
+            language: English
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  generate-cv-by-ruby-spanish:
-    name: CV (Ruby) in Spanish
-    needs:
-      - changes
-      - static-checks
-    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
-    uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
-    with:
-      file_full_path: assets/data/spanish.json
-      language: Spanish
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Generate ${{ matrix.language }} CV
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=${{ matrix.file }}
+
+      - name: Show summary information
+        run: |
+          echo "::notice title=${{ matrix.language }} CV::CV Generated"
+          echo "${{ matrix.language }} CV Generated" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.language }} CV
+          path: exported/*.pdf
+          if-no-files-found: 'error'
+          retention-days: 5
