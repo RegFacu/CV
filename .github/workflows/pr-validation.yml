@@ -35,9 +35,25 @@ jobs:
               - 'ruby/**'
               - '!ruby/env_setup/**'
 
+  static-checks:
+    name: Static checks
+    needs: changes
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rubocop checks
+        uses: luizfonseca/github-actions-rubocop@2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   generate-cv-by-ruby-english:
     name: CV (Ruby) in English
-    needs: changes
+    needs:
+      - changes
+      - static-checks
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
     with:
@@ -46,7 +62,9 @@ jobs:
 
   generate-cv-by-ruby-spanish:
     name: CV (Ruby) in Spanish
-    needs: changes
+    needs:
+      - changes
+      - static-checks
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     uses: RegFacu/CV/.github/workflows/generate-cv-by-ruby.yml@v1
     with:
