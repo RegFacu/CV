@@ -14,6 +14,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   changes:
     # This approach ensures the workflow is executed and skip the checks in cases they are not needed.
@@ -50,9 +54,13 @@ jobs:
           bundler-cache: true
 
       - name: Rubocop checks
-        uses: andrewmcodes/rubocop-linter-action@v3.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: reviewdog/action-rubocop@v2
+        with:
+          skip_install: true
+          use_bundler: true
+          fail_on_error: true
+          filter_mode: nofilter
+          only_changed: true
 
   generate-cv-by-ruby-english:
     name: CV (Ruby) in English
