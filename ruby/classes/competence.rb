@@ -17,14 +17,14 @@ class Competence
   end
 
   def default_options(horizontal_cursor)
-    {
-      document: @document,
-      at: [horizontal_cursor, cursor],
-      width: @available_width,
-      size: @theme.fonts[@theme.components.competence.text_size],
-      align: :"#{@theme.components.competence.align}",
-      valign: :"#{@theme.components.competence.valign}"
-    }
+        {
+          document: @document,
+          at: [horizontal_cursor, cursor],
+          width: @available_width,
+          size: @theme.fonts[@theme.components.competence.text_size],
+          align: :"#{@theme.components.competence.align}",
+          valign: :"#{@theme.components.competence.valign}"
+        }
   end
 
   def name_box(horizontal_cursor)

@@ -1,4 +1,4 @@
-require 'prawn'
+require "prawn"
 
 # Draw an empty row in the PDF document. Usually used to add a gap between 2 elements
 class Spacing

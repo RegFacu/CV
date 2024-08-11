@@ -17,7 +17,7 @@ class Header # rubocop:disable Metrics/ClassLength
   end
 
   def default_options(horizontal_cursor, font_size)
-    {
+    return {
       document: @document,
       at: [horizontal_cursor, cursor],
       width: @available_width,

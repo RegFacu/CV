@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'bundler'
+gem "bundler"
 gem 'prawn'
 gem 'prawn-svg'
 gem 'rubocop', require: false
