@@ -44,8 +44,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
       - name: Rubocop checks
-        uses: luizfonseca/github-actions-rubocop@2.0.0
+        uses: andrewmcodes/rubocop-linter-action@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
