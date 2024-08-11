@@ -26,8 +26,10 @@ Drawing a canvas for PDF generation or image rendering requires several maths fo
 ## Built With
 
 [![GHA][GHA]][GHA-url]
-[![Ruby][Ruby]][Ruby-url]
 [![Markdown][Markdown]][Markdown-url]
+
+[![Ruby][Ruby]][Ruby-url]
+[![Rubocop][Rubocop]][Rubocop-url]
 
 ## Getting Started
 
@@ -64,9 +66,11 @@ Each language contain one or several scripts to be executed locally.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=Ruby&logoColor=white
-[Ruby-url]: https://www.ruby-lang.org/en/
 [GHA]: https://img.shields.io/badge/GHA-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
 [GHA-url]: https://docs.github.com/en/actions
 [Markdown]: https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white
 [Markdown-url]: https://www.markdownguide.org/
+[Ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=Ruby&logoColor=white
+[Ruby-url]: https://www.ruby-lang.org/en/
+[Rubocop]: https://img.shields.io/badge/RuboCop-000000?style=for-the-badge&logo=RuboCop&logoColor=white
+[Rubocop-url]: https://rubocop.org/
