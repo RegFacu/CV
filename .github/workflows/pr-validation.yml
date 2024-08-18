@@ -105,29 +105,21 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            fetch('${{ env.JSON_PATH }}')
-              .then((response) => response.json())
-              .then((json) => {
-                table=[
-                    [{data: 'Example', header: true}, {data: 'Result', header: true}]
-                ]
-                for (const example of json.examples) {
-                  description=example.full_description
-                  result=((example.status == 'passed') ? 'Pass ✅' : 'Fail ❌')
-                  table.append([description, result])
-                }
-                table
-              })
-              .then((table) => {
-                core.summary
-                  .addHeading('Test Results')
-                  .addTable(table)
-                  .addLink('View execution', '${{ env.RUN_URL }}')
-                  .write()
-              })
-              .catch((error) => {
-                core.error(error)
-              });
+            const res = await import('${{ env.JSON_PATH }}');
+            json = await (await res.GET()).json();
+            table=[
+                [{data: 'Example', header: true}, {data: 'Result', header: true}]
+            ];
+            for (const example of json.examples) {
+              description=example.full_description;
+              result=((example.status == 'passed') ? 'Pass ✅' : 'Fail ❌');
+              table.append([description, result]);
+            }
+            await core.summary
+              .addHeading('Test Results')
+              .addTable(table)
+              .addLink('View execution', '${{ env.RUN_URL }}')
+              .write();
 
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
