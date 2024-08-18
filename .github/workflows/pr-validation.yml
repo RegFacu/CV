@@ -144,14 +144,14 @@ jobs:
             ];
             var coverage = json.RSpec.coverage
             for (const key in coverage) {
-              file = key;
+              file = key.replace("${{ github.workspace }}/", "");
               lines_data = coverage[key].lines
               lines = lines_data.length
-              relevant_Lines = lines_data.filter(x => x && x>=0 ).length
-              lines_covered = lines_data.filter(x => x>=1 ).length
+              relevant_Lines = lines_data.filter(x => x !== null && x>=0 ).length
+              lines_covered = lines_data.filter(x => x && x>=1 ).length
               lines_missed = relevant_Lines - lines_covered
               percentage = (lines_covered / relevant_Lines) * 100
-              table.push([file, percentage.toFixed(2), lines, relevant_Lines, lines_covered, lines_missed]);
+              table.push([file, percentage.toFixed(2), lines.toFixed(0), relevant_Lines.toFixed(0), lines_covered.toFixed(0), lines_missed.toFixed(0)]);
             }
             await core.summary
               .addHeading('Coverage Results')
