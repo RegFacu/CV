@@ -68,7 +68,8 @@ jobs:
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     runs-on: ubuntu-latest
     env:
-      JSON_PATH: ruby/tests.json
+      TEST_JSON_PATH: ruby/tests.json
+      COVERAGE_JSON_PATH: coverage/.resultset.json
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - name: Checkout
@@ -80,14 +81,14 @@ jobs:
           bundler-cache: true
 
       - name: Rspec tests
-        run: bundle exec rspec --format j -o ${{ env.JSON_PATH }} --format RSpec::Github::Formatter ruby/
+        run: bundle exec rspec --format j -o ${{ env.TEST_JSON_PATH }} --format RSpec::Github::Formatter ruby/
 
       - name: Upload tests artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Rspec tests
-          path: ${{ env.JSON_PATH }}
+          path: ${{ env.TEST_JSON_PATH }}
           if-no-files-found: 'error'
           retention-days: 5
 
@@ -100,7 +101,7 @@ jobs:
           if-no-files-found: 'error'
           retention-days: 5
 
-      - name: Adding markdown
+      - name: Adding test markdown
         if: always()
         uses: actions/github-script@v7
         env:
@@ -108,8 +109,8 @@ jobs:
         with:
           script: |
             var fs = require('fs');
-            var json = JSON.parse(fs.readFileSync('${{ github.workspace }}/${{ env.JSON_PATH }}', 'utf8'));
-            table=[
+            var json = JSON.parse(fs.readFileSync('${{ github.workspace }}/${{ env.TEST_JSON_PATH }}', 'utf8'));
+            var table = [
                 [{data: 'Example', header: true}, {data: 'Result', header: true}]
             ];
             for (const example of json.examples) {
@@ -119,6 +120,41 @@ jobs:
             }
             await core.summary
               .addHeading('Test Results')
+              .addTable(table)
+              .addLink('View execution', '${{ env.RUN_URL }}')
+              .write();
+
+
+      - name: Adding coverage markdown
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            var fs = require('fs');
+            var json = JSON.parse(fs.readFileSync('${{ github.workspace }}/${{ env.COVERAGE_JSON_PATH }}', 'utf8'));
+            var table = [
+                [
+                  {data: 'File', header: true},
+                  {data: 'Coverage', header: true},
+                  {data: 'Lines', header: true},
+                  {data: 'Relevant Lines', header: true},
+                  {data: 'Lines covered', header: true},
+                  {data: 'Lines missed', header: true}
+                ]
+            ];
+            var coverage = json.RSpec.coverage
+            for (const key in coverage) {
+              file = key;
+              lines_data = coverage[key].lines
+              lines = lines_data.length
+              relevant_Lines = lines_data.filter(x => x>=0 ).length
+              lines_covered = lines_data.filter(x => x>=1 ).length
+              lines_missed = relevant_Lines - lines_covered
+              coverage = (lines_covered / relevant_Lines) * 100
+              table.push([file, coverage.toFixed(2), lines, relevant_Lines, lines_covered, lines_missed]);
+            }
+            await core.summary
+              .addHeading('Coverage Results')
               .addTable(table)
               .addLink('View execution', '${{ env.RUN_URL }}')
               .write();
