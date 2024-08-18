@@ -62,11 +62,60 @@ jobs:
           filter_mode: nofilter
           only_changed: true
 
+  unit-tests:
+    name: Unit tests
+    needs: changes
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Rspec tests
+        run: rspec --format j -o ruby/tests.json --format RSpec::Github::Formatter ruby
+
+      - name: Adding markdown
+        uses: actions/github-script@v7
+        env:
+          JSON_PATH: ruby/tests.json
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            fetch('${{ env.JSON_PATH }}')
+              .then((response) => response.json())
+              .then((json) => {
+                table=[
+                    [{data: 'Example', header: true}, {data: 'Result', header: true}]
+                ]
+                for (const example of json.examples) {
+                  description=example.full_description
+                  result=((example.status == 'passed') ? 'Pass ✅' : 'Fail ❌')
+                  table.append([description, result])
+                }
+                table
+              })
+              .then((table) => {
+                await core.summary
+                  .addHeading('Test Results')
+                  .addTable(table)
+                  .addLink('View execution', '${{ env.RUN_URL }}')
+                  .write()
+              })
+              .catch((error) => {
+                core.error(error)
+              });
+
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
     needs:
       - changes
       - static-checks
+      - unit-tests
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     runs-on: ubuntu-latest
     strategy:

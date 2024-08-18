@@ -11,4 +11,4 @@ if [ "$?" != "0" ]; then
   fi
 fi
 
-rspec --format j -o ruby/tests.json ruby
+rspec --format j -o ruby/tests.json --format RSpec::Github::Formatter ruby
