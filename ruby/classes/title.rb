@@ -34,7 +34,7 @@ class Title
   end
 
   def fit(horizontal_cursor, remaining_space)
-    name_box(horizontal_cursor).height + @spacing < remaining_space
+    name_box(horizontal_cursor).height + @spacing <= remaining_space
   end
 
   def write_content(horizontal_cursor)

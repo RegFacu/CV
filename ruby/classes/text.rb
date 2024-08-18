@@ -47,7 +47,7 @@ class Text
   end
 
   def fit(horizontal_cursor, remaining_space)
-    measure_height(horizontal_cursor) < remaining_space
+    measure_height(horizontal_cursor) <= remaining_space
   end
 
   def measure_height(horizontal_cursor)

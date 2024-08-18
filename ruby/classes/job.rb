@@ -45,7 +45,7 @@ class Job < Summary
 
   def fit(horizontal_cursor, remaining_space)
     @job_height = [title_box(horizontal_cursor).line_height, company_box(horizontal_cursor).line_height].max
-    @job_height + @title_spacing + measure_height(horizontal_cursor) < remaining_space
+    @job_height + @title_spacing + measure_height(horizontal_cursor) <= remaining_space
   end
 
   def write_content(horizontal_cursor)
