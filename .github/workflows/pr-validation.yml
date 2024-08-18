@@ -67,6 +67,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     runs-on: ubuntu-latest
+    env:
+      JSON_PATH: ruby/tests.json
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,13 +80,26 @@ jobs:
           bundler-cache: true
 
       - name: Rspec tests
-        run: rspec --format j -o ruby/tests.json --format RSpec::Github::Formatter ruby
+        run: rspec --format j -o ${{ env.JSON_PATH }} --format RSpec::Github::Formatter ruby
+
+      - name: Upload tests artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rspec tests
+          path: ${{ env.JSON_PATH }}
+          if-no-files-found: 'error'
+          retention-days: 5
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rspec coverage
+          path: coverage
+          if-no-files-found: 'error'
+          retention-days: 5
 
       - name: Adding markdown
         uses: actions/github-script@v7
-        env:
-          JSON_PATH: ruby/tests.json
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         with:
           script: |
             fetch('${{ env.JSON_PATH }}')
