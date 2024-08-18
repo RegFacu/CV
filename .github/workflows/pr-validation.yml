@@ -113,7 +113,7 @@ jobs:
             for (const example of json.examples) {
               description=example.full_description;
               result=((example.status == 'passed') ? 'Pass ✅' : 'Fail ❌');
-              table.append([description, result]);
+              table.push([description, result]);
             }
             await core.summary
               .addHeading('Test Results')
