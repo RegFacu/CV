@@ -119,7 +119,7 @@ jobs:
                 table
               })
               .then((table) => {
-                await core.summary
+                core.summary
                   .addHeading('Test Results')
                   .addTable(table)
                   .addLink('View execution', '${{ env.RUN_URL }}')
