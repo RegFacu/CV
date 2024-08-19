@@ -38,7 +38,7 @@ RSpec.describe Spacing do
     it 'is false if remaining_space is less than the spacing value' do
       subject = described_class.new(document, data, theme, available_width)
       remaining_space = 1
-      expect(subject.fit(0, remaining_space)).to be true
+      expect(subject.fit(0, remaining_space)).to be false
     end
   end
 
