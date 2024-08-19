@@ -104,8 +104,6 @@ jobs:
       - name: Adding test markdown
         if: always()
         uses: actions/github-script@v7
-        env:
-          github: ${{ toJson(github) }}
         with:
           script: |
             var fs = require('fs');
