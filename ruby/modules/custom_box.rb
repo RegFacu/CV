@@ -15,6 +15,6 @@ class CustomBox < Prawn::Text::Box
 
   def render(options = {})
     super
-    @measured_width = width_of(@initial_text, size: @font_size) unless defined?(options[:dry_run]).nil?
+    @measured_width = width_of(@initial_text, size: @font_size) if options[:dry_run]
   end
 end

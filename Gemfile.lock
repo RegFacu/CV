@@ -7,6 +7,8 @@ GEM
     bigdecimal (3.1.8)
     css_parser (1.17.1)
       addressable
+    diff-lcs (1.5.1)
+    docile (1.4.1)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     matrix (0.4.2)
@@ -30,6 +32,21 @@ GEM
     regexp_parser (2.9.2)
     rexml (3.3.2)
       strscan
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-github (2.4.0)
+      rspec-core (~> 3.0)
+    rspec-mocks (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
     rubocop (1.65.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -43,7 +60,15 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
+    rubocop-rspec (3.0.4)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     strscan (3.1.0)
     ttfunk (1.8.0)
       bigdecimal (~> 3.1)
@@ -57,7 +82,11 @@ DEPENDENCIES
   bundler
   prawn
   prawn-svg
+  rspec
+  rspec-github
   rubocop
+  rubocop-rspec
+  simplecov
 
 BUNDLED WITH
    2.5.16

@@ -12,7 +12,7 @@ class Spacing
   end
 
   def fit(_horizontal_cursor, remaining_space)
-    @spacing < remaining_space
+    @spacing <= remaining_space
   end
 
   def write_content(_horizontal_cursor)

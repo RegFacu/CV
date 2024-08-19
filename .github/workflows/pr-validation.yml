@@ -62,11 +62,107 @@ jobs:
           filter_mode: nofilter
           only_changed: true
 
+  unit-tests:
+    name: Unit tests
+    needs: changes
+    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
+    runs-on: ubuntu-latest
+    env:
+      TEST_JSON_PATH: ruby/tests.json
+      COVERAGE_JSON_PATH: coverage/.resultset.json
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Rspec tests
+        run: bundle exec rspec --format j -o ${{ env.TEST_JSON_PATH }} --format RSpec::Github::Formatter ruby/
+
+      - name: Upload tests artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rspec tests
+          path: ${{ env.TEST_JSON_PATH }}
+          if-no-files-found: 'error'
+          retention-days: 5
+
+      - name: Upload coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rspec coverage
+          path: coverage
+          if-no-files-found: 'error'
+          retention-days: 5
+
+      - name: Adding test markdown
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            var fs = require('fs');
+            var json = JSON.parse(fs.readFileSync('${{ github.workspace }}/${{ env.TEST_JSON_PATH }}', 'utf8'));
+            var table = [
+                [{data: 'Example', header: true}, {data: 'Result', header: true}]
+            ];
+            for (const example of json.examples) {
+              description=example.full_description;
+              result=((example.status == 'passed') ? 'Pass ✅' : 'Fail ❌');
+              table.push([description, result]);
+            }
+            await core.summary
+              .addHeading('Test Results')
+              .addTable(table)
+              .addLink('View execution', '${{ env.RUN_URL }}')
+              .write();
+
+
+      - name: Adding coverage markdown
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            var fs = require('fs');
+            var json = JSON.parse(fs.readFileSync('${{ github.workspace }}/${{ env.COVERAGE_JSON_PATH }}', 'utf8'));
+            var table = [
+                [
+                  {data: 'File', header: true},
+                  {data: 'Coverage', header: true},
+                  {data: 'Lines', header: true},
+                  {data: 'Relevant Lines', header: true},
+                  {data: 'Lines covered', header: true},
+                  {data: 'Lines missed', header: true}
+                ]
+            ];
+            var coverage = json.RSpec.coverage
+            for (const key in coverage) {
+              file = key.replace("${{ github.workspace }}/", "");
+              lines_data = coverage[key].lines
+              lines = lines_data.length
+              relevant_Lines = lines_data.filter(x => x !== null && x>=0 ).length
+              lines_covered = lines_data.filter(x => x && x>=1 ).length
+              lines_missed = relevant_Lines - lines_covered
+              percentage = (lines_covered / relevant_Lines) * 100
+              table.push([file, percentage.toFixed(2), lines.toFixed(0), relevant_Lines.toFixed(0), lines_covered.toFixed(0), lines_missed.toFixed(0)]);
+            }
+            await core.summary
+              .addHeading('Coverage Results')
+              .addTable(table)
+              .addLink('View execution', '${{ env.RUN_URL }}')
+              .write();
+
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ matrix.language }}
     needs:
       - changes
       - static-checks
+      - unit-tests
     if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     runs-on: ubuntu-latest
     strategy:

@@ -37,7 +37,7 @@ class Competence
   end
 
   def fit(_horizontal_cursor, remaining_space)
-    measure_height < remaining_space
+    measure_height <= remaining_space
   end
 
   def measure_height(horizontal_cursor)
