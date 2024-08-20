@@ -10,6 +10,11 @@ This is a different way to share my CV. It is not only generating the PDF dynami
 ## Which is the idea
 You will be able to see my technical skill by reading the code, automations and documentations as well as my management skills in terms of ticket tracking, milestone definitions and metrics (limited to what I can do with GitHub).
 
+#### Subscribe to my releases
+Get notified when some milestone is completed and a new release is generated.
+
+[![Get notified](docs/subscribe.gif)](https://github.com/RegFacu/CV/subscription)
+
 Let me highlight some points that you can see in this project:
 
 ### GitHub Actions (GHA)
