@@ -167,7 +167,7 @@ jobs:
     with:
       file_full_path: assets/data/english.yml
       language: English
-      skip: ${{ needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true' }}
+      skip: ${{ needs.changes.outputs.assets == 'false' && needs.changes.outputs.ruby == 'false' }}
 
   generate-cv-by-ruby-spanish:
     name: CV (Ruby) in Spanish
@@ -179,4 +179,4 @@ jobs:
     with:
       file_full_path: assets/data/spanish.json
       language: Spanish
-      skip: ${{ needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true' }}
+      skip: ${{ needs.changes.outputs.assets == 'false' && needs.changes.outputs.ruby == 'false' }}
