@@ -16,21 +16,24 @@ on:
 jobs:
   generate-cv-by-ruby:
     name: CV (Ruby) in ${{ inputs.language }}
-    if: ${{ !inputs.skip }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        if: ${{ !inputs.skip }}
         uses: actions/checkout@v4
 
       - name: Configure ruby
+        if: ${{ !inputs.skip }}
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
 
       - name: Generate ${{ inputs.language }} CV
+        if: ${{ !inputs.skip }}
         run: bundle exec ruby ruby/scripts/generate_cv.rb --path=${{ inputs.file_full_path }}
 
       - name: Upload artifact
+        if: ${{ !inputs.skip }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.language }} CV
