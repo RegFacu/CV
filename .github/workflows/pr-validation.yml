@@ -163,11 +163,11 @@ jobs:
       - changes
       - static-checks
       - unit-tests
-    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     uses: ./.github/workflows/generate-cv-by-ruby.yml
     with:
       file_full_path: assets/data/english.yml
       language: English
+      skip: ${{ needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true' }}
 
   generate-cv-by-ruby-spanish:
     name: CV (Ruby) in Spanish
@@ -175,8 +175,8 @@ jobs:
       - changes
       - static-checks
       - unit-tests
-    if: needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true'
     uses: ./.github/workflows/generate-cv-by-ruby.yml
     with:
       file_full_path: assets/data/spanish.json
       language: Spanish
+      skip: ${{ needs.changes.outputs.assets == 'true' || needs.changes.outputs.ruby == 'true' }}
