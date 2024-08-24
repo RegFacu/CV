@@ -164,6 +164,7 @@ jobs:
       - static-checks
       - unit-tests
     uses: ./.github/workflows/generate-cv-by-ruby.yml
+    if: always()
     with:
       file_full_path: assets/data/english.yml
       language: English

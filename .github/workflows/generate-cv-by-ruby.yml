@@ -1,4 +1,4 @@
-name: Generate CV by Ruby
+name: Ruby CV generation
 on:
   workflow_call:
     inputs:
@@ -8,6 +8,8 @@ on:
       language:
         required: true
         type: string
+      # Workaround to ensure the caller job is executed
+      # but the reusable job is never executed. So check could be marked as required
       skip:
         required: false
         default: false
@@ -15,7 +17,7 @@ on:
 
 jobs:
   generate-cv-by-ruby:
-    name: CV (Ruby) in ${{ inputs.language }}
+    name: Ruby CV generation
     if: ${{ !inputs.skip }}
     runs-on: ubuntu-latest
     steps:
