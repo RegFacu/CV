@@ -1,0 +1,41 @@
+name: Ruby CV generation
+on:
+  workflow_call:
+    inputs:
+      file_full_path:
+        required: true
+        type: string
+      language:
+        required: true
+        type: string
+      # Workaround to ensure the caller job is executed
+      # but the reusable job is never executed. So check could be marked as required
+      skip:
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  generate-cv-by-ruby:
+    name: Ruby CV generation
+    if: ${{ !inputs.skip }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Generate ${{ inputs.language }} CV
+        run: bundle exec ruby ruby/scripts/generate_cv.rb --path=${{ inputs.file_full_path }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.language }} CV
+          path: exported/*.pdf
+          if-no-files-found: 'error'
+          retention-days: 5
