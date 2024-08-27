@@ -13,7 +13,7 @@ This is a different way to share my CV. It is not only generating the PDF dynami
   ·
   <a href="https://github.com/RegFacu/CV/issues/new?labels=bug&template=2-bug_report.md">Report Bug</a>
   ·
-  <a href="https://github.com/RegFacu/CV/issues/new?labels=new-process&template=3-new_process.md">Request new process</a>
+  <a href="https://github.com/RegFacu/CV/issues/new/choose">Open an issue</a>
 </p>
 
 ## Which is the idea
