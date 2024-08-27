@@ -87,6 +87,11 @@ Each language contain one or several scripts to be executed locally.
 ./ruby/run_tests.zsh
 ```
 
+## Change log
+
+Each release contains the changelog including the list of PR's included with a summary of what was added.
+Please refer to [this section](https://github.com/RegFacu/CV/releases) in order to see them.
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [GHA]: https://img.shields.io/badge/GHA-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
