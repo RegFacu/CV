@@ -2,7 +2,7 @@ name: New process
 description: Request a new process definition
 title: "[NewProcess]"
 labels: ["new-process"]
-projects: ""
+projects: []
 body:
   - type: markdown
     attributes:
