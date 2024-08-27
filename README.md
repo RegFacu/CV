@@ -7,6 +7,15 @@ This is a different way to share my CV. It is not only generating the PDF dynami
     <li><a href="cv/ruby/cv_spanish.pdf">Spanish CV.pdf</a></li>
 </ul>
 
+---
+<p align="center">
+  <a href="https://github.com/RegFacu/CV/issues/new?labels=enhancement&template=1-feature_request.md">Request Feature</a>
+  ·
+  <a href="https://github.com/RegFacu/CV/issues/new?labels=bug&template=2-bug_report.md">Report Bug</a>
+  ·
+  <a href="https://github.com/RegFacu/CV/issues/new?labels=new-process&template=3-new_process.md">Request new process</a>
+</p>
+
 ## Which is the idea
 You will be able to see my technical skill by reading the code, automations and documentations as well as my management skills in terms of ticket tracking, milestone definitions and metrics (limited to what I can do with GitHub).
 
