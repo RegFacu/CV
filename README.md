@@ -78,6 +78,15 @@ Each language contain one or several scripts to be executed locally.
 ./ruby/run_locally.zsh
 ```
 
+## Unit tests
+
+Each language contain one or several scripts to be executed locally.
+
+#### Ruby
+```sh
+./ruby/run_tests.zsh
+```
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [GHA]: https://img.shields.io/badge/GHA-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
