@@ -116,7 +116,7 @@ data:
     country: Argentina
     time_zone: "-3"
   footer:
-    text: Generated automatically by https://github.com/RegFacu/CV
+    text: ""
   sections:
     - type: title
       name: Professional summary
