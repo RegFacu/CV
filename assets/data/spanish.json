@@ -217,6 +217,21 @@
           {
             "text": "Soporte al equipo de Quality Engineering (QE) desarrollando herramientas y automatizaciones para asegurar la calidad de los entregables, incluyendo validación de tickets, regresiones automáticas, ejecución de tests unitarios/integración y chequeos estáticos de código.",
             "bullet": true
+          },
+          {
+            "text": "Impacto cuantificable"
+          },
+          {
+            "text": "Logré una disminución del 30% en el tiempo de validación de PR al paralelizar jobs, brindando feedback más rápido a los desarrolladores.",
+            "bullet": true
+          },
+          {
+            "text": "Automaticé el 90% del proceso de release desde el freeze hasta la publicación en el store, reduciendo el trabajo manual y los errores.",
+            "bullet": true
+          },
+          {
+            "text": "Logré despliegues totalmente auto-servicio (100%), permitiendo a los equipos testear desde ramas de funcionalidades y trabajar con total independencia.",
+            "bullet": true
           }
         ],
         "competences": [
@@ -265,6 +280,21 @@
           },
           {
             "text": "Configuración de checks en GitHub para validar pull requests, asegurar la estabilidad de la rama develop y gestionar releases.",
+            "bullet": true
+          },
+          {
+            "text": "Impacto cuantificable"
+          },
+          {
+            "text": "Reduje la tasa de fallos al dockerizar el 95% de la infraestructura, eliminando problemas con descargas de dependencias y conexiones inestables.",
+            "bullet": true
+          },
+          {
+            "text": "Implementamos cache remota en Artifactory, reduciendo en un 15% los tiempos de compilación en infraestructura y en los equipos de los desarrolladores.",
+            "bullet": true
+          },
+          {
+            "text": "Implementamos métricas para el 100% de los flujos de trabajo mobile en Datadog, midiendo tiempos de ejecución, espera y tasa de éxito a nivel de workflow, jobs y steps.",
             "bullet": true
           }
         ],
