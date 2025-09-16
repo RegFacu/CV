@@ -174,6 +174,13 @@ data:
             to ensure deliverable quality, including ticket validation, automatic regressions,
             unit/integration test execution, and static code checks.
           bullet: true
+        - text: Quantifiable Impact
+        - text: Achieved a 30% reduction in PR validation build time through job parallelization, enabling faster developer feedback
+          bullet: true
+        - text: Automated 90% of the release process from code freeze to store publication, reducing manual effort and minimizing errors.
+          bullet: true
+        - text: Achieved fully self-service build deployments (100%), allowing teams to test from feature branches and work with total independence.
+          bullet: true
       competences:
         - name: Bitrise
           value: 8.5
@@ -201,6 +208,13 @@ data:
             execution times for each phase.
         - text: Configured checks in GitHub to validate pull requests, ensure stability
             of the develop branch, and manage releases.
+          bullet: true
+        - text: Quantifiable Impact
+        - text: Reduced failure rates by containerizing 95% of the infrastructure context, eliminating issues with dependency downloads and unstable external connections.
+          bullet: true
+        - text: Implemented Artifactory remote caching, cutting compile times by 15% across infrastructure builds and developer environments.
+          bullet: true
+        - text: Implemented 100% coverage of mobile workflows metrics in Datadog, tracking execution time, wait time, and success rate at workflow, job, and step levels.
           bullet: true
       competences:
         - name: Google Play Distribution
